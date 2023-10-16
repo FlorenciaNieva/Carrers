@@ -57,7 +57,28 @@
                 </button>
             </form>
         </section>
+
         <section id="container-cards" class="row justify-content-center mt-4 view"></section>
+
+        <section id="container-create" class="container view visually-hidden">
+            <form class="container mb-3">
+                <label class="form-label mb-3">
+                    Job Title
+                    <input type="email" class="form-control mt-2" id="input-title" placeholder="Job Title">
+                </label>
+                <label class="form-label mb-3">
+                    Description
+                    <textarea class="form-control mt-2" id="job-description" rows="3"></textarea>
+                </label>
+                <label>
+                    Tags
+                    <input type="text" name="location" id="input-location" class="form-control mb-3 mt-2" placeholder="Location">
+                    <input type="text" name="seniority" id="input-seniority" class="form-control mb-3" placeholder="Seniority">
+                    <input type="text" name="category" id="input-category" class="form-control mb-3" placeholder="Category">
+                </label>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
     </main>
 
     <script src="js/api.js"></script>
