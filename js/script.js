@@ -25,7 +25,7 @@ const cardJob = (data) => {
 
 $('#btn-view-create').addEventListener('click', () => showView('section-form-create'))
 
-const dataNewJob = async () => {
+const dataNewJob = () => {
     let newJob = {
         name: `${$('#input-name').value}`,
         image: `${$('#input-url-image').value}`,
