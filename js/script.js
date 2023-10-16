@@ -24,3 +24,27 @@ const cardJob = (data) => {
 }
 
 $('#btn-view-create').addEventListener('click', () => showView('section-form-create'))
+
+const dataNewJob = async () => {
+    let newJob = {
+        name: `${$('#input-name').value}`,
+        image: `${$('#input-url-image').value}`,
+        description: `${$('#textarea-description').value}`,
+        location: `${$('#input-location').value}`,
+        category: `${$('#input-category').value}`,
+        seniority: `${$('#input-seniority').value}`,
+        benefits: {
+            vacation: `${$('#input-vacations').value}`,
+            health_ensurance: `${$('#input-health-ensurance').value}`,
+            internet_paid: `${$('#select-internet-paid').value}`,
+        },
+        salary: `${$('#input-salary').value}`,
+        long_term: `${$('#select-long-term').value}`,
+        languages: [`${$('#input-language').value}`],
+    }
+    return newJob;
+};
+
+$('#btn-create-job').addEventListener('click', () => {
+    createNewJob()
+})
