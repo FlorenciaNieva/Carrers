@@ -1,6 +1,11 @@
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
+const showView = (viewToShow) => {
+    $$('.view').forEach((view) => view.classList.add('is-hidden'));
+    $(`#${viewToShow}`).classList.remove('is-hidden');
+};
+
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category} of data) {
     $('#container-cards').innerHTML += `<div class="card col-4 m-1" style="width: 16rem;">
