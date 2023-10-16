@@ -85,7 +85,11 @@
                     Benefits
                     <input type="text"  class="form-control mt-2" id="input-vacations" placeholder="Vacations">
                     <input type="text"  class="form-control mt-2" id="input-health-ensurance" placeholder="Health Ensurance">
-                    <input type="text"  class="form-control mt-2" id="input-internet-paid" placeholder="Internet paid">
+                    <select class="form-control mt-2" name="select-internet-paid" id="select-internet-paid">
+                        <option value="internet-paid" selected disabled >Internet Paid</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
                 </label>
                 <label class="form-label mb-3">
                     Salary
@@ -93,7 +97,7 @@
                 </label>
                 <label class="form-label mb-3">
                     Long Term
-                    <select class="form-control mt-2 name="select-long-term" id="select-long-term">
+                    <select class="form-control mt-2" name="select-long-term" id="select-long-term">
                         <option value="select" selected disabled>Select True o False</option>
                         <option value="true">True</option>
                         <option value="false">False</option>
@@ -101,7 +105,7 @@
                 </label>
                 <label class="form-label mb-3">
                     Lenguajes
-                    <input type="number"  class="form-control mt-2" id="input-language" placeholder="Languages">
+                    <input type="text"  class="form-control mt-2" id="input-language" placeholder="Languages">
                 </label>
                 <button type="button" class="btn btn-primary" id="btn-create-job">Submit</button>
             </form>
