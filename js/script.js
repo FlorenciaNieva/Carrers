@@ -23,4 +23,4 @@ const cardJob = (data) => {
     </div>` }
 }
 
-$('#btn-create-job').addEventListener('click', () => showView('section-form-create'))
+$('#btn-view-create').addEventListener('click', () => showView('section-form-create'))
