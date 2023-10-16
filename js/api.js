@@ -1,4 +1,4 @@
-const createCards = async () => {
+const getJobs = async () => {
     try {
         const response = await fetch("https://6524100aea560a22a4e957ae.mockapi.io/api/jobs");
         const data = await response.json();
@@ -8,7 +8,7 @@ const createCards = async () => {
     }
 };
 
-createCards();
+getJobs();
 
 const createNewJob = async () => {
     const newJob = dataNewJob()
@@ -22,7 +22,7 @@ const createNewJob = async () => {
         });
         if (response.ok) {
             $('#container-cards').innerHTML = "";
-            createCards();
+            getJobs();
         } 
     } catch (error) {
         console.error("Error de red:", error);
