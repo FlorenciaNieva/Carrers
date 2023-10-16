@@ -8,7 +8,7 @@ const cardJob = (data) => {
         <div class="card-body">
             <h5 class="card-title">${name}</h5>
             <p class="card-text">${description}</p>
-            <a href="#" class="btn btn-primary">Más detalles</a>
+            <a href="#" class="btn btn-primary">See details</a>
         </div>
     </div>` }
 }
