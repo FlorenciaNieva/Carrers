@@ -2,8 +2,8 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
 const showView = (viewToShow) => {
-    $$('.view').forEach((view) => view.classList.add('is-hidden'));
-    $(`#${viewToShow}`).classList.remove('is-hidden');
+    $$('.view').forEach((view) => view.classList.add('visually-hidden'));
+    $(`#${viewToShow}`).classList.remove('visually-hidden');
 };
 
 const cardJob = (data) => {
