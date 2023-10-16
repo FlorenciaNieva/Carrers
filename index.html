@@ -64,7 +64,11 @@
             <form class="container mb-3">
                 <label class="form-label mb-3">
                     Job Title
-                    <input type="email" class="form-control mt-2" id="input-title" placeholder="Job Title">
+                    <input type="text" class="form-control mt-2" id="input-title" placeholder="Job Title">
+                </label>
+                <label class="form-label mb-3">
+                    Image
+                    <input type="text"  class="form-control mt-2" id="input-url-image" placeholder="URL">
                 </label>
                 <label class="form-label mb-3">
                     Description
@@ -75,6 +79,26 @@
                     <input type="text" name="location" id="input-location" class="form-control mb-3 mt-2" placeholder="Location">
                     <input type="text" name="seniority" id="input-seniority" class="form-control mb-3" placeholder="Seniority">
                     <input type="text" name="category" id="input-category" class="form-control mb-3" placeholder="Category">
+                </label>
+                <label class="form-label mb-3">
+                    Benefits
+                    <input type="text"  class="form-control mt-2" id="input-benefits" placeholder="Benefits">
+                </label>
+                <label class="form-label mb-3">
+                    Salary
+                    <input type="number"  class="form-control mt-2" id="input-salary" placeholder="Salary">
+                </label>
+                <label class="form-label mb-3">
+                    Long Term
+                    <select class="form-control mt-2 name="select-long-term" id="select-long-term">
+                        <option value="select" selected disabled>Select True o False</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </label>
+                <label class="form-label mb-3">
+                    Lenguajes
+                    <input type="number"  class="form-control mt-2" id="input-language" placeholder="Languages">
                 </label>
                 <button type="button" class="btn btn-primary">Submit</button>
             </form>
