@@ -16,7 +16,7 @@ $('#btn-home').addEventListener('click', () => {
 })
 
 const cardJob = (data) => {
-    for (let {name, image, description, location, seniority, category} of data) {
+    for (let {name, image, description, location, seniority, category, id} of data) {
     $('#container-cards').innerHTML += `<div class="card col-4 m-1" style="width: 16rem;">
         <img src="${image}" class="card-img-top mt-2" alt="factory">
         <div class="card-body">
@@ -27,7 +27,7 @@ const cardJob = (data) => {
                 <div class="btn-card btn btn-primary">${seniority}</div>
                 <div class="btn-card btn btn-primary">${category}</div>
             </div>
-            <a href="#" class="btn btn-primary d-flex justify-content-center">See details</a>
+            <a href="#" id="${id}" class="btn btn-primary d-flex justify-content-center">See details</a>
         </div>
     </div>` }
 }
