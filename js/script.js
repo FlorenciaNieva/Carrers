@@ -27,7 +27,7 @@ const cardJob = (data) => {
                 <div class="btn-card btn btn-primary">${seniority}</div>
                 <div class="btn-card btn btn-primary">${category}</div>
             </div>
-            <a href="#" id="${id}" class="btn btn-primary d-flex justify-content-center">See details</a>
+            <a href="#" onclick="viewDetails('${id}')" id="${id}" class="btn btn-primary d-flex justify-content-center">See details</a>
         </div>
     </div>` }
 }
@@ -57,3 +57,37 @@ const dataNewJob = () => {
 $('#btn-create-job').addEventListener('click', () => {
     createNewJob()
 })
+
+const detailsCard = (infoCard) => {
+    $('#view-details').innerHTML = '';
+    $('#view-details').innerHTML += `
+    <div class="card mb-3">
+        <div class="row g-0 align-items-center">
+            <div class="col-md-4 p-3">
+                <img src="${infoCard.image}" class="img-fluid rounded" alt="image factory">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title text-center">${infoCard.name}</h5>
+                    <p class="card-text">Description: ${infoCard.description}</p>
+                    <p class="card-text">Location: ${infoCard.location}</p>
+                    <p class="card-text">Category: ${infoCard.category}</p>
+                    <p class="card-text">Seniority: ${infoCard.seniority}</p>
+                    <p class="card-text">Benefits:</p>
+                    <ul>
+                        <li>Vacation: ${infoCard.benefits.vacation}</li>
+                        <li>Health Ensurence: ${infoCard.benefits.health_ensurance}</li>
+                        <li>Internet Paid: ${infoCard.benefits.internet_paid}</li>
+                    </ul>
+                    <p class="card-text">Salary: $${infoCard.salary}</p>
+                    <p class="card-text">Languages: ${infoCard.languages.join(", ")}</p>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <button type="button" class="btn btn-success">Edit</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+    `;
+};
