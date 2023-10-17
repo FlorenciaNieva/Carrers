@@ -6,6 +6,15 @@ const showView = (viewToShow) => {
     $(`#${viewToShow}`).classList.remove('visually-hidden');
 };
 
+$('#btn-home').addEventListener('click', () => {
+    showView('spinner');
+    setTimeout(() => {
+        showView('container-cards');
+        $('#search-bar').classList.remove('visually-hidden');
+    }, 3000);
+    $('#search-bar').classList.remove('visually-hidden');
+})
+
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category} of data) {
     $('#container-cards').innerHTML += `<div class="card col-4 m-1" style="width: 16rem;">
