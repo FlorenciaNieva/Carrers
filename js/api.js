@@ -41,3 +41,14 @@ const createNewJob = async () => {
     }, 3000);
     $('#search-bar').classList.remove('visually-hidden');
 }
+
+const viewDetails = async (id) => {
+    try {
+        showView('view-details');
+        const response = await fetch(`https://6524100aea560a22a4e957ae.mockapi.io/api/jobs/${id}`);
+        const data = await response.json();
+        detailsCard(data);
+    } catch (error) {
+        console.error(error);
+    }
+};
