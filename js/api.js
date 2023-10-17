@@ -1,13 +1,14 @@
 const getJobs = async () => {
     try {
-        showView('spinner')
+        showView('spinner');
         const response = await fetch("https://6524100aea560a22a4e957ae.mockapi.io/api/jobs");
         const data = await response.json();
         setTimeout(() => {
             cardJob(data);
             showView('container-cards');
+            $('#search-bar').classList.remove('visually-hidden')
         }, 3000);
-
+        $('#search-bar').classList.remove('visually-hidden')
     } catch (error) {
         console.error(error);
     }
@@ -31,10 +32,12 @@ const createNewJob = async () => {
         } 
     } catch (error) {
         console.error("Error de red:", error);
-    } 
-    showView('spinner')
+    }
+    showView('spinner');
     setTimeout(() => {
+        cardJob(data);
         showView('container-cards');
+        $('#search-bar').classList.remove('visually-hidden');
     }, 3000);
-    ;
+    $('#search-bar').classList.remove('visually-hidden');
 }
