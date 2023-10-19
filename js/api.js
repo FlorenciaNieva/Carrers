@@ -35,7 +35,6 @@ const createNewJob = async () => {
     }
     showView('spinner');
     setTimeout(() => {
-        cardJob(data);
         showView('container-cards');
         $('#search-bar').classList.remove('visually-hidden');
     }, 3000);
@@ -44,10 +43,13 @@ const createNewJob = async () => {
 
 const viewDetails = async (id) => {
     try {
-        showView('view-details');
+        showView('spinner');
         const response = await fetch(`https://6524100aea560a22a4e957ae.mockapi.io/api/jobs/${id}`);
         const data = await response.json();
-        detailsCard(data);
+        setTimeout(() => {
+            showView('view-details');
+            detailsCard(data);
+        }, 3000);
     } catch (error) {
         console.error(error);
     }
