@@ -62,6 +62,7 @@ const deleteJob = async (id) => {
             {
                 method: 'DELETE',
             });
+        $('#container-cards').innerHTML = "";
         getJobs();
     } catch (error) {
         console.error(error);
