@@ -52,3 +52,16 @@ const viewDetails = async (id) => {
         console.error(error);
     }
 };
+
+const deleteJob = async (id) => {
+    try {
+        const response = await fetch(
+            `https://6524100aea560a22a4e957ae.mockapi.io/api/jobs/${id}`,
+            {
+                method: 'DELETE',
+            });
+        getJobs();
+    } catch (error) {
+        console.error(error);
+    }
+}
