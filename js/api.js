@@ -35,7 +35,6 @@ const createNewJob = async () => {
     }
     showView('spinner');
     setTimeout(() => {
-        cardJob(data);
         showView('container-cards');
         $('#search-bar').classList.remove('visually-hidden');
     }, 3000);
