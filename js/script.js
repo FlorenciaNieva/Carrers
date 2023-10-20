@@ -159,7 +159,7 @@ const formEditJob = async (id) => {
             Lenguajes
             <input type="text" class="form-control mt-2" id="edit-languages">
         </label>
-        <button type="button" onclick="showView('')" class="btn btn-secondary">Cancel</button>
+        <button type="button" onclick="viewDetails('${id}')" class="btn btn-secondary">Cancel</button>
         <button type="button" onclick="editJob('${id}')" class="btn btn-primary">Edit</button>
     </form>
     `;
