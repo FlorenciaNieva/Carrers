@@ -163,6 +163,27 @@ const formEditJob = async (id) => {
         <button type="button" onclick="editJob('${id}')" class="btn btn-primary">Edit</button>
     </form>
     `;
+    try {
+        const originalData = await originalJobData(id);
+        completeFormFields(originalData);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+const completeFormFields = (originalJobData) => {
+    $('#edit-name').value = originalJobData.name;
+    $('#edit-description').value = originalJobData.description;
+    $('#edit-image').value = originalJobData.image;
+    $('#edit-location').value = originalJobData.location;
+    $('#edit-seniority').value = originalJobData.seniority;
+    $('#edit-category').value = originalJobData.category;
+    $('#edit-vacations').value = originalJobData.benefits.vacation;
+    $('#edit-health-ensurance').value = originalJobData.benefits.health_ensurance;
+    $('#select-edit-internet-paid').value = originalJobData.benefits.internet_paid;
+    $('#edit-salary').value = originalJobData.salary;
+    $('#select-edit-long-term').value = originalJobData.long_term;
+    $('#edit-languages').value = originalJobData.languages.join(", ");
 }
 
 const dataEditJob = () => {
