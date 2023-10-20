@@ -69,6 +69,15 @@ const deleteJob = async (id) => {
     }
 }
 
+const originalJobData = async (id) => {
+    try {
+        const response = await fetch(`https://6524100aea560a22a4e957ae.mockapi.io/api/jobs/${id}`);
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 const editJob = async (id) => {
     try {
         const response = await fetch(
