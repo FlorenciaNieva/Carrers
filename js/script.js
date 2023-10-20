@@ -164,3 +164,23 @@ const formEditJob = async (id) => {
     </form>
     `;
 }
+
+const dataEditJob = () => {
+    const data  = {
+        name: $('#edit-name').value,
+        image: $('#edit-image').value,
+        description: $('#edit-description').value,
+        location: $('#edit-location').value,
+        category: $('#edit-category').value,
+        seniority: $('#edit-seniority').value,
+        benefits: {
+            vacation: $('#edit-vacations').value,
+            health_ensurance: $('#edit-health-ensurance').value,
+            internet_paid: $('#select-edit-internet-paid').value,
+        },
+        salary: $('#edit-salary').value,
+        long_term: $('#select-edit-long-term').value,
+        languages: [$('#edit-languages').value],
+    }
+    return data;
+}
