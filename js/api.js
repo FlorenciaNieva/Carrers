@@ -7,7 +7,7 @@ const getJobs = async () => {
             cardJob(data);
             showView('container-cards');
             $('#search-bar').classList.remove('visually-hidden')
-        }, 3000);
+        }, 2000);
         $('#search-bar').classList.remove('visually-hidden')
     } catch (error) {
         console.error(error);
@@ -37,7 +37,7 @@ const createNewJob = async () => {
     setTimeout(() => {
         showView('container-cards');
         $('#search-bar').classList.remove('visually-hidden');
-    }, 3000);
+    }, 2000);
     $('#search-bar').classList.remove('visually-hidden');
 }
 
@@ -49,7 +49,7 @@ const viewDetails = async (id) => {
         setTimeout(() => {
             showView('view-details');
             detailsCard(data);
-        }, 3000);
+        }, 2000);
     } catch (error) {
         console.error(error);
     }

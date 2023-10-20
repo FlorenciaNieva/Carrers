@@ -11,7 +11,7 @@ $('#btn-home').addEventListener('click', () => {
     setTimeout(() => {
         showView('container-cards');
         $('#search-bar').classList.remove('visually-hidden');
-    }, 3000);
+    }, 2000);
     $('#search-bar').classList.remove('visually-hidden');
 })
 
