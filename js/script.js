@@ -84,7 +84,7 @@ const detailsCard = (infoCard) => {
                 </div>
             </div>
             <div class="card-footer text-center">
-                <button type="button" class="btn btn-success">Edit</button>
+                <button type="button" onclick="formEditJob('${infoCard.id}')" class="btn btn-success">Edit</button>
                 <button type="button" onclick="alertDeleteJob('${infoCard.id}')" class="btn btn-danger">Delete</button>
             </div>
         </div>
@@ -107,4 +107,101 @@ const alertDeleteJob = (id) => {
         </div>
     </div>`
     showView('section-alert-delete');
+}
+
+const formEditJob = async (id) => {
+    showView('section-form-edit');
+    $('#form-edit').innerHTML = '';
+    $('#form-edit').innerHTML += `
+    <h2 class="mb-4 mt-4">Edit Job</h2>
+    <form class="container mb-3">
+        <label class="form-label mb-3">
+            Job Title
+            <input type="text" class="form-control mt-2" id="edit-name">
+        </label>
+        <label class="form-label mb-3">
+            Image
+            <input type="text" class="form-control mt-2" id="edit-image">
+        </label>
+        <label class="form-label mb-3">
+            Description
+            <textarea class="form-control mt-2" id="edit-description" rows="3"></textarea>
+        </label>
+        <label>
+            Tags
+            <input type="text" name="location" id="edit-location" class="form-control mb-3 mt-2">
+            <input type="text" name="seniority" id="edit-seniority" class="form-control mb-3">
+            <input type="text" name="category" id="edit-category" class="form-control mb-3">
+        </label>
+        <label class="form-label mb-3">
+            Benefits
+            <input type="text"  class="form-control mt-2" id="edit-vacations">
+            <input type="text"  class="form-control mt-2" id="edit-health-ensurance">
+            <select class="form-control mt-2" name="select-edit-internet-paid" id="select-edit-internet-paid">
+                <option value="internet-paid" disabled>Internet Paid</option>
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </label>
+        <label class="form-label mb-3">
+            Salary
+            <input type="number"  class="form-control mt-2" id="edit-salary">
+        </label>
+        <label class="form-label mb-3">
+            Long Term
+            <select class="form-control mt-2" name="select-edit-long-term" id="select-edit-long-term">
+                <option value="select" disabled>Select True o False</option>
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </label>
+        <label class="form-label mb-3">
+            Lenguajes
+            <input type="text" class="form-control mt-2" id="edit-languages">
+        </label>
+        <button type="button" onclick="showView('')" class="btn btn-secondary">Cancel</button>
+        <button type="button" onclick="editJob('${id}')" class="btn btn-primary">Edit</button>
+    </form>
+    `;
+    try {
+        const originalData = await originalJobData(id);
+        completeFormFields(originalData);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+const completeFormFields = (originalJobData) => {
+    $('#edit-name').value = originalJobData.name;
+    $('#edit-description').value = originalJobData.description;
+    $('#edit-image').value = originalJobData.image;
+    $('#edit-location').value = originalJobData.location;
+    $('#edit-seniority').value = originalJobData.seniority;
+    $('#edit-category').value = originalJobData.category;
+    $('#edit-vacations').value = originalJobData.benefits.vacation;
+    $('#edit-health-ensurance').value = originalJobData.benefits.health_ensurance;
+    $('#select-edit-internet-paid').value = originalJobData.benefits.internet_paid;
+    $('#edit-salary').value = originalJobData.salary;
+    $('#select-edit-long-term').value = originalJobData.long_term;
+    $('#edit-languages').value = originalJobData.languages.join(", ");
+}
+
+const dataEditJob = () => {
+    const data  = {
+        name: $('#edit-name').value,
+        image: $('#edit-image').value,
+        description: $('#edit-description').value,
+        location: $('#edit-location').value,
+        category: $('#edit-category').value,
+        seniority: $('#edit-seniority').value,
+        benefits: {
+            vacation: $('#edit-vacations').value,
+            health_ensurance: $('#edit-health-ensurance').value,
+            internet_paid: $('#select-edit-internet-paid').value,
+        },
+        salary: $('#edit-salary').value,
+        long_term: $('#select-edit-long-term').value,
+        languages: [$('#edit-languages').value],
+    }
+    return data;
 }
