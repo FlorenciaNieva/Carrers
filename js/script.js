@@ -101,9 +101,8 @@ const alertDeleteJob = (id) => {
             </div>
         </div>
         <div>
-            <button type="button" class="btn btn-outline-secondary">Cancel</button>
-            <button type="button" onclick="deleteJob('${
-                id}')" class="btn btn-danger">Delete job</button>
+            <button type="button" onclick="viewDetails('${id}')" class="btn btn-outline-secondary">Cancel</button>
+            <button type="button" onclick="deleteJob('${id}')" class="btn btn-danger">Delete job</button>
         </div>
     </div>`
     showView('section-alert-delete');
