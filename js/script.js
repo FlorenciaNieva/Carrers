@@ -6,6 +6,13 @@ const showView = (viewToShow) => {
     $(`#${viewToShow}`).classList.remove('visually-hidden');
 };
 
+const fillSelectLocation = (countries) => {
+    for (let country of countries) {
+        const option = `<option value="${country}">${country}</option>`;
+        $('#location-select').innerHTML += `${option}`;
+    }
+}
+
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category, id} of data) {
     $('#container-cards').innerHTML += `<div class="card col-4 m-1" style="width: 16rem;">
