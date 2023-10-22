@@ -13,6 +13,13 @@ const fillSelectLocation = (countries) => {
     }
 }
 
+const fillSelectSeniority = (seniorities) => {
+    for (let seniority of seniorities) {
+        const option = `<option value="${seniority}">${seniority}</option>`;
+        $('#seniority-select').innerHTML += `${option}`;
+    }
+}
+
 const fillSelectCategory = (categories) => {
     for (let category of categories) {
         const option = `<option value="${category}">${category}</option>`;
