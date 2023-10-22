@@ -102,7 +102,7 @@ const detailsCard = (infoCard) => {
                         <li>Internet Paid: ${infoCard.benefits.internet_paid}</li>
                     </ul>
                     <p class="card-text">Salary: $${infoCard.salary}</p>
-                    <p class="card-text">Languages: ${infoCard.languages.join(", ")}</p>
+                    <p class="card-text">Languages: ${infoCard.languages}</p>
                 </div>
             </div>
             <div class="card-footer text-center">
@@ -210,7 +210,7 @@ const completeFormFields = (originalJobData) => {
     $('#select-edit-internet-paid').value = originalJobData.benefits.internet_paid;
     $('#edit-salary').value = originalJobData.salary;
     $('#select-edit-long-term').value = originalJobData.long_term;
-    $('#edit-languages').value = originalJobData.languages.join(", ");
+    $('#edit-languages').value = originalJobData.languages;
 }
 
 const dataEditJob = () => {
