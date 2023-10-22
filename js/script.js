@@ -114,48 +114,54 @@ const formEditJob = async (id) => {
     $('#form-edit').innerHTML += `
     <h2 class="mb-4 mt-4">Edit Job</h2>
     <form class="container mb-3">
+        <h6>Job Title</h6>
         <label class="form-label mb-3">
-            Job Title
             <input type="text" class="form-control mt-2" id="edit-name">
         </label>
+        <h6>Image</h6>
         <label class="form-label mb-3">
-            Image
             <input type="text" class="form-control mt-2" id="edit-image">
         </label>
+        <h6>Description</h6>
         <label class="form-label mb-3">
-            Description
             <textarea class="form-control mt-2" id="edit-description" rows="3"></textarea>
         </label>
+        <h6>Tags</h6>
         <label>
-            Tags
+            Location:
             <input type="text" name="location" id="edit-location" class="form-control mb-3 mt-2">
-            <input type="text" name="seniority" id="edit-seniority" class="form-control mb-3">
-            <input type="text" name="category" id="edit-category" class="form-control mb-3">
+            Seniority:
+            <input type="text" name="seniority" id="edit-seniority" class="form-control mb-3 mt-2">
+            Category:
+            <input type="text" name="category" id="edit-category" class="form-control mb-3 mt-2">
         </label>
+        <h6>Benefits</h6>
         <label class="form-label mb-3">
-            Benefits
+            Vacations:
             <input type="text"  class="form-control mt-2" id="edit-vacations">
+            Health ensurance:
             <input type="text"  class="form-control mt-2" id="edit-health-ensurance">
+            Internet paid:
             <select class="form-control mt-2" name="select-edit-internet-paid" id="select-edit-internet-paid">
                 <option value="internet-paid" disabled>Internet Paid</option>
                 <option value="true">True</option>
                 <option value="false">False</option>
             </select>
         </label>
+        <h6>Salary</h6>
         <label class="form-label mb-3">
-            Salary
             <input type="number"  class="form-control mt-2" id="edit-salary">
         </label>
+        <h6>Long Term</h6>
         <label class="form-label mb-3">
-            Long Term
             <select class="form-control mt-2" name="select-edit-long-term" id="select-edit-long-term">
                 <option value="select" disabled>Select True o False</option>
                 <option value="true">True</option>
                 <option value="false">False</option>
             </select>
         </label>
+        <h6>Lenguajes</h6>
         <label class="form-label mb-3">
-            Lenguajes
             <input type="text" class="form-control mt-2" id="edit-languages">
         </label>
         <button type="button" onclick="viewDetails('${id}')" class="btn btn-secondary">Cancel</button>
