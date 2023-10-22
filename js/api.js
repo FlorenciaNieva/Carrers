@@ -10,6 +10,7 @@ const getJobs = async () => {
         }, 2000);
         $('#search-bar').classList.remove('visually-hidden')
         getCountries(data);
+        getSeniorities(data);
         getCategories(data);
     } catch (error) {
         console.error(error);
@@ -24,6 +25,16 @@ const getCountries = (data) => {
         }
     });
     fillSelectLocation(countries);
+}
+
+const getSeniorities = (data) => {
+    const seniorities = [];
+    data.forEach(element => {
+        if (!seniorities.includes(element.seniority)) {
+            seniorities.push(element.seniority);
+        }
+    });
+    fillSelectSeniority(seniorities);
 }
 
 const getCategories = (data) => {
