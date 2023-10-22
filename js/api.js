@@ -9,10 +9,21 @@ const getJobs = async () => {
             $('#search-bar').classList.remove('visually-hidden')
         }, 2000);
         $('#search-bar').classList.remove('visually-hidden')
+        getCountries(data);
     } catch (error) {
         console.error(error);
     }
 };
+
+const getCountries = (data) => {
+    const countries = [];
+    data.forEach(element => {
+        if (!countries.includes(element.location)) {
+            countries.push(element.location);
+        }
+    });
+    fillSelectLocation(countries);
+}
 
 const createNewJob = async () => {
     const newJob = dataNewJob()
