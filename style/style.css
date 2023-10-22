@@ -36,6 +36,13 @@
     }
 }
 
+.card-text-short {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
 .btn-card {
     --bs-btn-padding-y: .25rem;
     --bs-btn-padding-x: .5rem;
