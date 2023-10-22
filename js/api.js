@@ -10,6 +10,7 @@ const getJobs = async () => {
         }, 2000);
         $('#search-bar').classList.remove('visually-hidden')
         getCountries(data);
+        getCategories(data);
     } catch (error) {
         console.error(error);
     }
@@ -23,6 +24,16 @@ const getCountries = (data) => {
         }
     });
     fillSelectLocation(countries);
+}
+
+const getCategories = (data) => {
+    const categories = [];
+    data.forEach(element => {
+        if (!categories.includes(element.category)) {
+            categories.push(element.category);
+        }
+    });
+    fillSelectCategory(categories);
 }
 
 const createNewJob = async () => {
