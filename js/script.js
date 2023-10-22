@@ -61,8 +61,24 @@ const dataNewJob = () => {
         long_term: `${$('#select-long-term').value}`,
         languages: [`${$('#input-language').value}`],
     }
+    clearCreateForm();
     return newJob;
 };
+
+const clearCreateForm = () => {
+    $('#input-name').value = "";
+    $('#input-url-image').value = "";
+    $('#textarea-description').value = "";
+    $('#input-location').value = "";
+    $('#input-category').value = "";
+    $('#input-seniority').value = "";
+    $('#input-vacations').value = "";
+    $('#input-health-ensurance').value = "";
+    $('#select-internet-paid').value = "internet-paid";
+    $('#input-salary').value = "";
+    $('#select-long-term').value = "long-temp";
+    $('#input-language').value = "";
+}
 
 const detailsCard = (infoCard) => {
     $('#view-details').innerHTML = '';
