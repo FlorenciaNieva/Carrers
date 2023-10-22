@@ -13,6 +13,13 @@ const fillSelectLocation = (countries) => {
     }
 }
 
+const fillSelectCategory = (categories) => {
+    for (let category of categories) {
+        const option = `<option value="${category}">${category}</option>`;
+        $('#category-select').innerHTML += `${option}`;
+    }
+}
+
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category, id} of data) {
     $('#container-cards').innerHTML += `<div class="card col-4 m-1" style="width: 16rem;">
