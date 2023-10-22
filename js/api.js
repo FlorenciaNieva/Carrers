@@ -14,8 +14,6 @@ const getJobs = async () => {
     }
 };
 
-getJobs();
-
 const createNewJob = async () => {
     const newJob = dataNewJob()
     try {
@@ -95,3 +93,10 @@ const editJob = async (id) => {
         console.error(error);
     }
 }
+
+const initialize = () => {
+    getJobs();
+    initializeBtn();
+}
+
+window.onload = initialize();

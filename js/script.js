@@ -6,15 +6,6 @@ const showView = (viewToShow) => {
     $(`#${viewToShow}`).classList.remove('visually-hidden');
 };
 
-$('#btn-home').addEventListener('click', () => {
-    showView('spinner');
-    setTimeout(() => {
-        showView('container-cards');
-        $('#search-bar').classList.remove('visually-hidden');
-    }, 2000);
-    $('#search-bar').classList.remove('visually-hidden');
-})
-
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category, id} of data) {
     $('#container-cards').innerHTML += `<div class="card col-4 m-1" style="width: 16rem;">
@@ -31,8 +22,6 @@ const cardJob = (data) => {
         </div>
     </div>` }
 }
-
-$('#btn-view-create').addEventListener('click', () => showView('section-form-create'))
 
 const dataNewJob = () => {
     let newJob = {
@@ -53,10 +42,6 @@ const dataNewJob = () => {
     }
     return newJob;
 };
-
-$('#btn-create-job').addEventListener('click', () => {
-    createNewJob()
-})
 
 const detailsCard = (infoCard) => {
     $('#view-details').innerHTML = '';
@@ -209,4 +194,19 @@ const dataEditJob = () => {
         languages: [$('#edit-languages').value],
     }
     return data;
+}
+
+const initializeBtn = () => {
+    $('#btn-home').addEventListener('click', () => {
+        showView('spinner');
+        setTimeout(() => {
+            showView('container-cards');
+            $('#search-bar').classList.remove('visually-hidden');
+        }, 2000);
+        $('#search-bar').classList.remove('visually-hidden');
+    });
+    $('#btn-view-create').addEventListener('click', () => showView('section-form-create'));
+    $('#btn-create-job').addEventListener('click', () => {
+        createNewJob();
+    });
 }
