@@ -27,6 +27,13 @@ const fillSelectCategory = (categories) => {
     }
 }
 
+$('#clearFilters').addEventListener('click', () => {
+    $('#location-select').value = "location";
+    $('#seniority-select').value = "seniority";
+    $('#category-select').value = "category";
+    getJobs();
+});
+
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category, id} of data) {
     $('#container-cards').innerHTML += `<div class="card col-4 m-1" style="width: 16rem;">
