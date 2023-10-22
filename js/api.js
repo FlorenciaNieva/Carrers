@@ -9,10 +9,43 @@ const getJobs = async () => {
             $('#search-bar').classList.remove('visually-hidden')
         }, 2000);
         $('#search-bar').classList.remove('visually-hidden')
+        getCountries(data);
+        getSeniorities(data);
+        getCategories(data);
     } catch (error) {
         console.error(error);
     }
 };
+
+const getCountries = (data) => {
+    const countries = [];
+    data.forEach(element => {
+        if (!countries.includes(element.location)) {
+            countries.push(element.location);
+        }
+    });
+    fillSelectLocation(countries);
+}
+
+const getSeniorities = (data) => {
+    const seniorities = [];
+    data.forEach(element => {
+        if (!seniorities.includes(element.seniority)) {
+            seniorities.push(element.seniority);
+        }
+    });
+    fillSelectSeniority(seniorities);
+}
+
+const getCategories = (data) => {
+    const categories = [];
+    data.forEach(element => {
+        if (!categories.includes(element.category)) {
+            categories.push(element.category);
+        }
+    });
+    fillSelectCategory(categories);
+}
 
 const createNewJob = async () => {
     const newJob = dataNewJob()
