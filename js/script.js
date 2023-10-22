@@ -61,8 +61,24 @@ const dataNewJob = () => {
         long_term: `${$('#select-long-term').value}`,
         languages: [`${$('#input-language').value}`],
     }
+    clearCreateForm();
     return newJob;
 };
+
+const clearCreateForm = () => {
+    $('#input-name').value = "";
+    $('#input-url-image').value = "";
+    $('#textarea-description').value = "";
+    $('#input-location').value = "";
+    $('#input-category').value = "";
+    $('#input-seniority').value = "";
+    $('#input-vacations').value = "";
+    $('#input-health-ensurance').value = "";
+    $('#select-internet-paid').value = "internet-paid";
+    $('#input-salary').value = "";
+    $('#select-long-term').value = "long-temp";
+    $('#input-language').value = "";
+}
 
 const detailsCard = (infoCard) => {
     $('#view-details').innerHTML = '';
@@ -86,7 +102,7 @@ const detailsCard = (infoCard) => {
                         <li>Internet Paid: ${infoCard.benefits.internet_paid}</li>
                     </ul>
                     <p class="card-text">Salary: $${infoCard.salary}</p>
-                    <p class="card-text">Languages: ${infoCard.languages.join(", ")}</p>
+                    <p class="card-text">Languages: ${infoCard.languages}</p>
                 </div>
             </div>
             <div class="card-footer text-center">
@@ -194,7 +210,7 @@ const completeFormFields = (originalJobData) => {
     $('#select-edit-internet-paid').value = originalJobData.benefits.internet_paid;
     $('#edit-salary').value = originalJobData.salary;
     $('#select-edit-long-term').value = originalJobData.long_term;
-    $('#edit-languages').value = originalJobData.languages.join(", ");
+    $('#edit-languages').value = originalJobData.languages;
 }
 
 const dataEditJob = () => {
