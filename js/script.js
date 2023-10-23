@@ -7,6 +7,7 @@ const showView = (viewToShow) => {
 };
 
 const fillSelectLocation = (countries) => {
+    $('#location-select').innerHTML += `<option value="location" selected disabled>location</option>`;
     for (let country of countries) {
         const option = `<option value="${country}">${country}</option>`;
         $('#location-select').innerHTML += `${option}`;
@@ -14,6 +15,7 @@ const fillSelectLocation = (countries) => {
 }
 
 const fillSelectSeniority = (seniorities) => {
+    $('#seniority-select').innerHTML += `<option value="seniority" selected disabled>seniority</option>`;
     for (let seniority of seniorities) {
         const option = `<option value="${seniority}">${seniority}</option>`;
         $('#seniority-select').innerHTML += `${option}`;
@@ -21,11 +23,20 @@ const fillSelectSeniority = (seniorities) => {
 }
 
 const fillSelectCategory = (categories) => {
+    $('#category-select').innerHTML += `<option value="category" selected disabled>category</option>`;
     for (let category of categories) {
         const option = `<option value="${category}">${category}</option>`;
         $('#category-select').innerHTML += `${option}`;
     }
 }
+
+$('#clearFilters').addEventListener('click', () => {
+    $('#container-cards').innerHTML = "";
+    $('#location-select').innerHTML = "";
+    $('#seniority-select').innerHTML = "";
+    $('#category-select').innerHTML = "";
+    getJobs();
+});
 
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category, id} of data) {

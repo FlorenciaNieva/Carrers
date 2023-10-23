@@ -47,6 +47,66 @@ const getCategories = (data) => {
     fillSelectCategory(categories);
 }
 
+const getFilters = () => {
+    const location = $("#location-select").value;
+    const category = $("#category-select").value;
+    const seniority = $("#seniority-select").value;
+    showView("spinner");
+    if (location !== "location") {
+        const url = new URL("https://6524100aea560a22a4e957ae.mockapi.io/api/jobs");
+        url.searchParams.append("location", location);
+        fetch(url, {
+            method: "GET",
+            headers: { "content-type": "application/json" },
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                setTimeout(() => {
+                    $("#container-cards").innerHTML = "";
+                    cardJob(data);
+                    showView("container-cards");
+                    $("#search-bar").classList.remove("visually-hidden");
+                }, 2000);
+                $("#search-bar").classList.remove("visually-hidden");
+            });
+    } else if (category !== "category") {
+        const url = new URL("https://6524100aea560a22a4e957ae.mockapi.io/api/jobs");
+        url.searchParams.append("category", category);
+        fetch(url, {
+            method: "GET",
+            headers: { "content-type": "application/json" },
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                setTimeout(() => {
+                    $("#container-cards").innerHTML = "";
+                    cardJob(data);
+                    showView("container-cards");
+                    $("#search-bar").classList.remove("visually-hidden");
+                }, 2000);
+                $("#search-bar").classList.remove("visually-hidden");
+            });
+    }
+    if (seniority !== "seniority") {
+        const url = new URL("https://6524100aea560a22a4e957ae.mockapi.io/api/jobs");
+        url.searchParams.append("seniority", seniority);
+        fetch(url, {
+            method: "GET",
+            headers: { "content-type": "application/json" },
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                setTimeout(() => {
+                    $("#container-cards").innerHTML = "";
+                    cardJob(data);
+                    showView("container-cards");
+                    $("#search-bar").classList.remove("visually-hidden");
+                }, 2000);
+                $("#search-bar").classList.remove("visually-hidden");
+            });
+    }
+}
+
 const createNewJob = async () => {
     const newJob = dataNewJob()
     try {
