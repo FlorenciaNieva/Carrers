@@ -28,9 +28,10 @@ const fillSelectCategory = (categories) => {
 }
 
 $('#clearFilters').addEventListener('click', () => {
-    $('#location-select').value = "location";
-    $('#seniority-select').value = "seniority";
-    $('#category-select').value = "category";
+    $('#container-cards').innerHTML = "";
+    $('#location-select').innerHTML = "";
+    $('#seniority-select').innerHTML = "";
+    $('#category-select').innerHTML = "";
     getJobs();
 });
 
