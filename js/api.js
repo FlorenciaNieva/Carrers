@@ -157,6 +157,9 @@ const deleteJob = async (id) => {
                 method: 'DELETE',
             });
         $('#container-cards').innerHTML = "";
+        $('#location-select').innerHTML = "";
+        $('#seniority-select').innerHTML = "";
+        $('#category-select').innerHTML = "";
         getJobs();
     } catch (error) {
         console.error(error);
