@@ -36,6 +36,10 @@
     }
 }
 
+.card-img-top {
+    height: 200px;
+}
+
 .card-text-short {
     overflow: hidden;
     display: -webkit-box;
