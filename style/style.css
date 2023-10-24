@@ -2,6 +2,17 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Gabarito', sans-serif;
+    background: linear-gradient(90deg, #9933FF, #330066);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.navbar {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .loader {
     width: 215px;
     height: 215px;
@@ -37,7 +48,12 @@
 }
 
 .card-img-top {
-    height: 200px;
+    height: 180px;
+    border-radius: 5px;
+}
+
+.btn-details {
+    border-radius: 50px;
 }
 
 .card-text-short {
@@ -47,12 +63,29 @@
     -webkit-line-clamp: 2;
 }
 
-.btn-card {
-    --bs-btn-padding-y: .25rem;
-    --bs-btn-padding-x: .5rem;
-    --bs-btn-font-size: .75rem;
+.img-fluid {
+    width: 100%;
+}
+
+.card-text-filters {
+    font-size: 2rem;
+}
+
+.salary {
+    display: block;
+    font-style: normal;
+    font-size: 26px;
+    min-width: 90px;
+}
+
+.benefits {
+    display: block;
+    font-style: normal;
+    font-size: 18px;
+    min-width: 90px;
 }
 
 label {
     width: 100%;
+    color: white;
 }
