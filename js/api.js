@@ -20,8 +20,8 @@ const getJobs = async () => {
 const getCountries = (data) => {
     const countries = [];
     data.forEach(element => {
-        if (!countries.includes(element.location)) {
-            countries.push(element.location);
+        if (!countries.includes(element.location.toLowerCase())) {
+            countries.push(element.location.toLowerCase());
         }
     });
     fillSelectLocation(countries);
@@ -30,8 +30,8 @@ const getCountries = (data) => {
 const getSeniorities = (data) => {
     const seniorities = [];
     data.forEach(element => {
-        if (!seniorities.includes(element.seniority)) {
-            seniorities.push(element.seniority);
+        if (!seniorities.includes(element.seniority.toLowerCase())) {
+            seniorities.push(element.seniority.toLowerCase());
         }
     });
     fillSelectSeniority(seniorities);
@@ -40,8 +40,8 @@ const getSeniorities = (data) => {
 const getCategories = (data) => {
     const categories = [];
     data.forEach(element => {
-        if (!categories.includes(element.category)) {
-            categories.push(element.category);
+        if (!categories.includes(element.category.toLowerCase())) {
+            categories.push(element.category.toLowerCase());
         }
     });
     fillSelectCategory(categories);
@@ -118,7 +118,7 @@ const createNewJob = async () => {
             body: JSON.stringify(newJob),
         });
         if (response.ok) {
-            $('#container-cards').innerHTML = "";
+            clearHome();
             getJobs();
         } 
     } catch (error) {
@@ -153,7 +153,7 @@ const deleteJob = async (id) => {
             {
                 method: 'DELETE',
             });
-        $('#container-cards').innerHTML = "";
+        clearHome();
         getJobs();
     } catch (error) {
         console.error(error);
@@ -180,7 +180,7 @@ const editJob = async (id) => {
                 },
                 body: JSON.stringify(dataEditJob()),
             });
-        $('#container-cards').innerHTML = "";
+        clearHome();
         getJobs();
     } catch (error) {
         console.error(error);

@@ -30,12 +30,32 @@ const fillSelectCategory = (categories) => {
     }
 }
 
-$('#clearFilters').addEventListener('click', () => {
+const clearHome = () => {
     $('#container-cards').innerHTML = "";
     $('#location-select').innerHTML = "";
     $('#seniority-select').innerHTML = "";
     $('#category-select').innerHTML = "";
-    getJobs();
+}
+
+$('#location-select').addEventListener('change', () => {
+    if ($('#location-select').value !== 'location') {
+        $('#seniority-select').value = 'seniority';
+        $('#category-select').value = 'category';
+    }
+});
+
+$('#seniority-select').addEventListener('change', () => {
+    if ($('#seniority-select').value !== 'seniority') {
+        $('#location-select').value = 'location';
+        $('#category-select').value = 'category';
+    }
+});
+
+$('#category-select').addEventListener('change', () => {
+    if ($('#category-select').value !== 'category') {
+        $('#location-select').value = 'location';
+        $('#seniority-select').value = 'seniority';
+    }
 });
 
 const cardJob = (data) => {
@@ -256,5 +276,9 @@ const initializeBtn = () => {
     $('#btn-view-create').addEventListener('click', () => showView('section-form-create'));
     $('#btn-create-job').addEventListener('click', () => {
         createNewJob();
+    });
+    $('#clearFilters').addEventListener('click', () => {
+        clearHome();
+        getJobs();
     });
 }
