@@ -63,7 +63,7 @@ body {
     -webkit-line-clamp: 2;
 }
 
-.btn-card {
+.badge-card {
     display: flex;
     justify-content: center;
     align-items: center;
