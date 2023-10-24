@@ -160,21 +160,21 @@ const formEditJob = async (id) => {
     showView('section-form-edit');
     $('#form-edit').innerHTML = '';
     $('#form-edit').innerHTML += `
-    <h2 class="mb-4 mt-4">Edit Job</h2>
+    <h2 class="mb-4 mt-4 text-light">Edit Job</h2>
     <form class="container mb-3">
-        <h6>Job Title</h6>
+        <h6 class="text-light">Job Title</h6>
         <label class="form-label mb-3">
             <input type="text" class="form-control mt-2" id="edit-name">
         </label>
-        <h6>Image</h6>
+        <h6 class="text-light">Image</h6>
         <label class="form-label mb-3">
             <input type="text" class="form-control mt-2" id="edit-image">
         </label>
-        <h6>Description</h6>
+        <h6 class="text-light">Description</h6>
         <label class="form-label mb-3">
             <textarea class="form-control mt-2" id="edit-description" rows="3"></textarea>
         </label>
-        <h6>Tags</h6>
+        <h6 class="text-light">Tags</h6>
         <label>
             Location:
             <input type="text" name="location" id="edit-location" class="form-control mb-3 mt-2">
@@ -183,7 +183,7 @@ const formEditJob = async (id) => {
             Category:
             <input type="text" name="category" id="edit-category" class="form-control mb-3 mt-2">
         </label>
-        <h6>Benefits</h6>
+        <h6 class="text-light">Benefits</h6>
         <label class="form-label mb-3">
             Vacations:
             <input type="text"  class="form-control mt-2" id="edit-vacations">
@@ -196,11 +196,11 @@ const formEditJob = async (id) => {
                 <option value="false">False</option>
             </select>
         </label>
-        <h6>Salary</h6>
+        <h6 class="text-light">Salary</h6>
         <label class="form-label mb-3">
             <input type="number"  class="form-control mt-2" id="edit-salary">
         </label>
-        <h6>Long Term</h6>
+        <h6 class="text-light">Long Term</h6>
         <label class="form-label mb-3">
             <select class="form-control mt-2" name="select-edit-long-term" id="select-edit-long-term">
                 <option value="select" disabled>Select True o False</option>
@@ -208,7 +208,7 @@ const formEditJob = async (id) => {
                 <option value="false">False</option>
             </select>
         </label>
-        <h6>Lenguajes</h6>
+        <h6 class="text-light">Lenguajes</h6>
         <label class="form-label mb-3">
             <input type="text" class="form-control mt-2" id="edit-languages">
         </label>
