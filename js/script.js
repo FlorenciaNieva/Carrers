@@ -30,14 +30,6 @@ const fillSelectCategory = (categories) => {
     }
 }
 
-$('#clearFilters').addEventListener('click', () => {
-    $('#container-cards').innerHTML = "";
-    $('#location-select').innerHTML = "";
-    $('#seniority-select').innerHTML = "";
-    $('#category-select').innerHTML = "";
-    getJobs();
-});
-
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category, id} of data) {
     $('#container-cards').innerHTML += `<div class="card col-4 m-1" style="width: 16rem;">
@@ -256,5 +248,12 @@ const initializeBtn = () => {
     $('#btn-view-create').addEventListener('click', () => showView('section-form-create'));
     $('#btn-create-job').addEventListener('click', () => {
         createNewJob();
+    });
+    $('#clearFilters').addEventListener('click', () => {
+        $('#container-cards').innerHTML = "";
+        $('#location-select').innerHTML = "";
+        $('#seniority-select').innerHTML = "";
+        $('#category-select').innerHTML = "";
+        getJobs();
     });
 }
