@@ -119,6 +119,9 @@ const createNewJob = async () => {
         });
         if (response.ok) {
             $('#container-cards').innerHTML = "";
+            $('#location-select').innerHTML = "";
+            $('#seniority-select').innerHTML = "";
+            $('#category-select').innerHTML = "";
             getJobs();
         } 
     } catch (error) {
