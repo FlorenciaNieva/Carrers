@@ -181,6 +181,9 @@ const editJob = async (id) => {
                 body: JSON.stringify(dataEditJob()),
             });
         $('#container-cards').innerHTML = "";
+        $('#location-select').innerHTML = "";
+        $('#seniority-select').innerHTML = "";
+        $('#category-select').innerHTML = "";
         getJobs();
     } catch (error) {
         console.error(error);
