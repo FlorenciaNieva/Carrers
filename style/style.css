@@ -9,6 +9,10 @@ body {
     background-attachment: fixed;
 }
 
+.navbar {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .loader {
     width: 215px;
     height: 215px;
