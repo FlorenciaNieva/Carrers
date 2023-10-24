@@ -37,7 +37,12 @@
 }
 
 .card-img-top {
-    height: 200px;
+    height: 180px;
+    border-radius: 5px;
+}
+
+.btn-details {
+    border-radius: 50px;
 }
 
 .card-text-short {
@@ -48,6 +53,10 @@
 }
 
 .btn-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
     --bs-btn-padding-y: .25rem;
     --bs-btn-padding-x: .5rem;
     --bs-btn-font-size: .75rem;
