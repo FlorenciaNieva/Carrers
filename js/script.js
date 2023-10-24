@@ -30,6 +30,13 @@ const fillSelectCategory = (categories) => {
     }
 }
 
+const clearHome = () => {
+    $('#container-cards').innerHTML = "";
+    $('#location-select').innerHTML = "";
+    $('#seniority-select').innerHTML = "";
+    $('#category-select').innerHTML = "";
+}
+
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category, id} of data) {
     $('#container-cards').innerHTML += `<div class="card col-4 m-1" style="width: 16rem;">
