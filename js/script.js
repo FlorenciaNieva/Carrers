@@ -42,7 +42,7 @@ const cardJob = (data) => {
     $('#container-cards').innerHTML += `<div class="card col-4 m-1" style="width: 16rem;">
         <img src="${image}" class="card-img-top mt-2" alt="factory">
         <div class="card-body">
-            <h5 class="card-title">${name}</h5>
+            <h5 class="card-title text-center">${name}</h5>
             <p class="card-text card-text-short">${description}</p>
             <div class="d-grid gap-2 d-md-flex justify-content-center mb-2">
                 <div class="btn-card btn btn-primary">${location}</div>
