@@ -37,6 +37,27 @@ const clearHome = () => {
     $('#category-select').innerHTML = "";
 }
 
+$('#location-select').addEventListener('change', () => {
+    if ($('#location-select').value !== 'location') {
+        $('#seniority-select').value = 'seniority';
+        $('#category-select').value = 'category';
+    }
+});
+
+$('#seniority-select').addEventListener('change', () => {
+    if ($('#seniority-select').value !== 'seniority') {
+        $('#location-select').value = 'location';
+        $('#category-select').value = 'category';
+    }
+});
+
+$('#category-select').addEventListener('change', () => {
+    if ($('#category-select').value !== 'category') {
+        $('#location-select').value = 'location';
+        $('#seniority-select').value = 'seniority';
+    }
+});
+
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category, id} of data) {
     $('#container-cards').innerHTML += `<div class="card col-4 m-1" style="width: 16rem;">
