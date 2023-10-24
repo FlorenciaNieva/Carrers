@@ -45,9 +45,9 @@ const cardJob = (data) => {
             <h5 class="card-title text-center">${name}</h5>
             <p class="card-text card-text-short">${description}</p>
             <div class="d-grid gap-2 d-md-flex justify-content-center mb-2">
-                <h6><span class="badge-card badge bg-primary">${location}</span></h6>
-                <h6><span class="badge-card badge bg-primary">${seniority}</span></h6>
-                <h6><span class="badge-card badge bg-primary">${category}</span></h6>
+                <h6><span class="badge rounded-pill bg-primary">${location}</span></h6>
+                <h6><span class="badge rounded-pill bg-primary">${seniority}</span></h6>
+                <h6><span class="badge rounded-pill bg-primary">${category}</span></h6>
             </div>
             <a href="#" onclick="viewDetails('${id}')" id="${id}" class="btn-details btn btn-primary d-flex justify-content-center">See details</a>
         </div>
@@ -124,9 +124,9 @@ const detailsCard = (infoCard) => {
                         <label class="text-secondary">Salary</label>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-center mt-3">
-                        <h5><span class="badge-card badge bg-primary">${infoCard.location}</span></h5>
-                        <h5><span class="badge-card badge bg-primary">${infoCard.seniority}</span></h5>
-                        <h5><span class="badge-card badge bg-primary">${infoCard.category}</span></h5>
+                        <h5><span class="badge rounded-pill bg-primary">${infoCard.location}</span></h5>
+                        <h5><span class="badge rounded-pill bg-primary">${infoCard.seniority}</span></h5>
+                        <h5><span class="badge rounded-pill bg-primary">${infoCard.category}</span></h5>
                     </div>
                     <div class="text-center mt-2">
                         <button type="button" onclick="formEditJob('${infoCard.id}')" class="btn btn-success">Edit</button>

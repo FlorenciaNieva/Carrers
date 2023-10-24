@@ -63,16 +63,6 @@ body {
     -webkit-line-clamp: 2;
 }
 
-.badge-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    --bs-btn-padding-y: .25rem;
-    --bs-btn-padding-x: .5rem;
-    --bs-btn-font-size: .75rem;
-}
-
 .img-fluid {
     width: 100%;
 }
