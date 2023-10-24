@@ -101,23 +101,38 @@ const detailsCard = (infoCard) => {
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title text-center">${infoCard.name}</h5>
-                    <p class="card-text">Description: ${infoCard.description}</p>
-                    <p class="card-text">Location: ${infoCard.location}</p>
-                    <p class="card-text">Category: ${infoCard.category}</p>
-                    <p class="card-text">Seniority: ${infoCard.seniority}</p>
-                    <p class="card-text">Benefits:</p>
-                    <ul>
-                        <li>Vacation: ${infoCard.benefits.vacation}</li>
-                        <li>Health Ensurence: ${infoCard.benefits.health_ensurance}</li>
-                        <li>Internet Paid: ${infoCard.benefits.internet_paid}</li>
-                    </ul>
-                    <p class="card-text">Salary: $${infoCard.salary}</p>
-                    <p class="card-text">Languages: ${infoCard.languages}</p>
+                    <p class="card-text text-secondary-emphasis  text-center mt-2">${infoCard.description}</p>
+                    <div class="text-center mt-2">
+                        <p class="btn btn-outline-primary">${infoCard.languages.join(', ')}</p>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-evenly">
+                        <div class="text-center">
+                            <p class="benefits m-0">${infoCard.benefits.vacation}</p>
+                            <label class="text-secondary">Vacation</label>
+                        </div>
+                        <div class="text-center">
+                            <p class="benefits m-0">${infoCard.benefits.health_ensurance}</p>
+                            <label class="text-secondary">Health ensurance</label>
+                        </div>
+                        <div class="text-center">
+                            <p class="benefits m-0">${infoCard.benefits.internet_paid}</p>
+                            <label class="text-secondary">Internet Paid</label>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <p class="salary m-0">$${infoCard.salary}</p>
+                        <label class="text-secondary">Salary</label>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-center mt-3">
+                        <p class="btn-card btn btn-primary">${infoCard.location}</p>
+                        <p class="btn-card btn btn-primary">${infoCard.category}</p>
+                        <p class="btn-card btn btn-primary">${infoCard.seniority}</p>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button type="button" onclick="formEditJob('${infoCard.id}')" class="btn btn-success">Edit</button>
+                        <button type="button" onclick="alertDeleteJob('${infoCard.id}')" class="btn btn-danger">Delete</button>
+                    </div>
                 </div>
-            </div>
-            <div class="card-footer text-center">
-                <button type="button" onclick="formEditJob('${infoCard.id}')" class="btn btn-success">Edit</button>
-                <button type="button" onclick="alertDeleteJob('${infoCard.id}')" class="btn btn-danger">Delete</button>
             </div>
         </div>
     </div>
