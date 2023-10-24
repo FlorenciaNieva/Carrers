@@ -49,7 +49,7 @@ const cardJob = (data) => {
                 <div class="btn-card btn btn-primary">${seniority}</div>
                 <div class="btn-card btn btn-primary">${category}</div>
             </div>
-            <a href="#" onclick="viewDetails('${id}')" id="${id}" class="btn btn-primary d-flex justify-content-center">See details</a>
+            <a href="#" onclick="viewDetails('${id}')" id="${id}" class="btn-details btn btn-primary d-flex justify-content-center">See details</a>
         </div>
     </div>` }
 }
