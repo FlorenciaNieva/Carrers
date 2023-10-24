@@ -264,7 +264,7 @@ const dataEditJob = () => {
     return data;
 }
 
-const initializeBtn = () => {
+const initializeEvents = () => {
     $('#btn-home').addEventListener('click', () => {
         showView('spinner');
         setTimeout(() => {

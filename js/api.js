@@ -189,7 +189,7 @@ const editJob = async (id) => {
 
 const initialize = () => {
     getJobs();
-    initializeBtn();
+    initializeEvents();
 }
 
 window.onload = initialize();
