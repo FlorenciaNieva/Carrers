@@ -257,10 +257,7 @@ const initializeBtn = () => {
         createNewJob();
     });
     $('#clearFilters').addEventListener('click', () => {
-        $('#container-cards').innerHTML = "";
-        $('#location-select').innerHTML = "";
-        $('#seniority-select').innerHTML = "";
-        $('#category-select').innerHTML = "";
+        clearHome();
         getJobs();
     });
 }

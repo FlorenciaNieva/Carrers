@@ -118,10 +118,7 @@ const createNewJob = async () => {
             body: JSON.stringify(newJob),
         });
         if (response.ok) {
-            $('#container-cards').innerHTML = "";
-            $('#location-select').innerHTML = "";
-            $('#seniority-select').innerHTML = "";
-            $('#category-select').innerHTML = "";
+            clearHome();
             getJobs();
         } 
     } catch (error) {
@@ -156,10 +153,7 @@ const deleteJob = async (id) => {
             {
                 method: 'DELETE',
             });
-        $('#container-cards').innerHTML = "";
-        $('#location-select').innerHTML = "";
-        $('#seniority-select').innerHTML = "";
-        $('#category-select').innerHTML = "";
+        clearHome();
         getJobs();
     } catch (error) {
         console.error(error);
@@ -186,10 +180,7 @@ const editJob = async (id) => {
                 },
                 body: JSON.stringify(dataEditJob()),
             });
-        $('#container-cards').innerHTML = "";
-        $('#location-select').innerHTML = "";
-        $('#seniority-select').innerHTML = "";
-        $('#category-select').innerHTML = "";
+        clearHome();
         getJobs();
     } catch (error) {
         console.error(error);
