@@ -1,3 +1,4 @@
+// Get the Information from the Api
 const getJobs = async () => {
     try {
         showView('spinner');
@@ -17,6 +18,7 @@ const getJobs = async () => {
     }
 };
 
+// Gets the Countries of the cards and saves them in a variable
 const getCountries = (data) => {
     const countries = [];
     data.forEach(element => {
@@ -27,6 +29,7 @@ const getCountries = (data) => {
     fillSelectLocation(countries);
 }
 
+// Gets the Seniorities of the cards and saves them in a variable
 const getSeniorities = (data) => {
     const seniorities = [];
     data.forEach(element => {
@@ -37,6 +40,7 @@ const getSeniorities = (data) => {
     fillSelectSeniority(seniorities);
 }
 
+// Gets the Categories of the cards and saves them in a variable
 const getCategories = (data) => {
     const categories = [];
     data.forEach(element => {
@@ -47,6 +51,7 @@ const getCategories = (data) => {
     fillSelectCategory(categories);
 }
 
+// Gets the Cards that pass the Filter
 const getFilters = () => {
     const location = $("#location-select").value;
     const category = $("#category-select").value;
@@ -86,8 +91,7 @@ const getFilters = () => {
                 }, 2000);
                 $("#search-bar").classList.remove("visually-hidden");
             });
-    }
-    if (seniority !== "seniority") {
+    } else if (seniority !== "seniority") {
         const url = new URL("https://6524100aea560a22a4e957ae.mockapi.io/api/jobs");
         url.searchParams.append("seniority", seniority);
         fetch(url, {
@@ -107,6 +111,7 @@ const getFilters = () => {
     }
 }
 
+// Create a New Job Card
 const createNewJob = async () => {
     const newJob = dataNewJob()
     try {
@@ -132,6 +137,7 @@ const createNewJob = async () => {
     $('#search-bar').classList.remove('visually-hidden');
 }
 
+// Get the Information of the Selected Card and Display it
 const viewDetails = async (id) => {
     try {
         showView('spinner');
@@ -146,6 +152,7 @@ const viewDetails = async (id) => {
     }
 };
 
+// Delete the Selected Job
 const deleteJob = async (id) => {
     try {
         const response = await fetch(
@@ -160,6 +167,7 @@ const deleteJob = async (id) => {
     }
 }
 
+// Get the Information of the Selected Card
 const originalJobData = async (id) => {
     try {
         const response = await fetch(`https://6524100aea560a22a4e957ae.mockapi.io/api/jobs/${id}`);
@@ -169,6 +177,7 @@ const originalJobData = async (id) => {
     }
 }
 
+// Edit Job
 const editJob = async (id) => {
     try {
         const response = await fetch(
@@ -187,6 +196,7 @@ const editJob = async (id) => {
     }
 }
 
+// Initialize Functions
 const initialize = () => {
     getJobs();
     initializeEvents();
