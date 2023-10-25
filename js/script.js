@@ -274,6 +274,7 @@ const dataEditJob = () => {
 
 // Initialize Events
 const initializeEvents = () => {
+    // Home Button
     $('#btn-home').addEventListener('click', () => {
         showView('spinner');
         setTimeout(() => {
@@ -282,26 +283,32 @@ const initializeEvents = () => {
         }, 2000);
         $('#search-bar').classList.remove('visually-hidden');
     });
+    // Create Job Button
     $('#btn-view-create').addEventListener('click', () => showView('section-form-create'));
+    // Submit Button
     $('#btn-create-job').addEventListener('click', () => {
         createNewJob();
     });
+    // Clear Button
     $('#clearFilters').addEventListener('click', () => {
         clearHome();
         getJobs();
     });
+    // Select Location Filter
     $('#location-select').addEventListener('change', () => {
         if ($('#location-select').value !== 'location') {
             $('#seniority-select').value = 'seniority';
             $('#category-select').value = 'category';
         }
     });
+    // Select Seniority Filter
     $('#seniority-select').addEventListener('change', () => {
         if ($('#seniority-select').value !== 'seniority') {
             $('#location-select').value = 'location';
             $('#category-select').value = 'category';
         }
     });
+    // Select Category Filter
     $('#category-select').addEventListener('change', () => {
         if ($('#category-select').value !== 'category') {
             $('#location-select').value = 'location';
