@@ -51,11 +51,9 @@ const getCategories = (data) => {
     fillSelectCategory(categories);
 }
 
-// Gets the Cards that pass the Filter
-const getFilters = () => {
+// Look for Cards that Pass the Location Filter and Displays them
+const getFilterLocation = () => {
     const location = $("#location-select").value;
-    const category = $("#category-select").value;
-    const seniority = $("#seniority-select").value;
     showView("spinner");
     if (location !== "location") {
         const url = new URL("https://6524100aea560a22a4e957ae.mockapi.io/api/jobs");
@@ -74,24 +72,14 @@ const getFilters = () => {
                 }, 2000);
                 $("#search-bar").classList.remove("visually-hidden");
             });
-    } else if (category !== "category") {
-        const url = new URL("https://6524100aea560a22a4e957ae.mockapi.io/api/jobs");
-        url.searchParams.append("category", category);
-        fetch(url, {
-            method: "GET",
-            headers: { "content-type": "application/json" },
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                setTimeout(() => {
-                    $("#container-cards").innerHTML = "";
-                    cardJob(data);
-                    showView("container-cards");
-                    $("#search-bar").classList.remove("visually-hidden");
-                }, 2000);
-                $("#search-bar").classList.remove("visually-hidden");
-            });
-    } else if (seniority !== "seniority") {
+    }
+}
+
+// Look for Cards that Pass the Seniority Filter and Displays them
+const getFilterSeniority = () => {
+    const seniority = $("#seniority-select").value;
+    showView("spinner");
+    if (seniority !== "seniority") {
         const url = new URL("https://6524100aea560a22a4e957ae.mockapi.io/api/jobs");
         url.searchParams.append("seniority", seniority);
         fetch(url, {
@@ -109,6 +97,37 @@ const getFilters = () => {
                 $("#search-bar").classList.remove("visually-hidden");
             });
     }
+}
+
+// Look for Cards that Pass the Category Filter and Displays them
+const getFilterCategory = () => {
+    const category = $("#category-select").value;
+    showView("spinner");
+    if (category !== "category") {
+        const url = new URL("https://6524100aea560a22a4e957ae.mockapi.io/api/jobs");
+        url.searchParams.append("category", category);
+        fetch(url, {
+            method: "GET",
+            headers: { "content-type": "application/json" },
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                setTimeout(() => {
+                    $("#container-cards").innerHTML = "";
+                    cardJob(data);
+                    showView("container-cards");
+                    $("#search-bar").classList.remove("visually-hidden");
+                }, 2000);
+                $("#search-bar").classList.remove("visually-hidden");
+            });
+    } 
+}
+
+// Pass the Functions to the Search Button
+const getFilters = () => {
+    getFilterLocation();
+    getFilterSeniority();
+    getFilterCategory();
 }
 
 // Create a New Job Card
