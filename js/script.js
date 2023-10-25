@@ -171,7 +171,7 @@ const formEditJob = async (id) => {
     showView('section-form-edit');
     $('#form-edit').innerHTML = '';
     $('#form-edit').innerHTML += `
-    <h2 class="mb-4 mt-4 text-light">Edit Job</h2>
+    <h2 class="mb-4 text-light">Edit Job</h2>
     <form class="container mb-3">
         <h6 class="text-light">Job Title</h6>
         <label class="form-label mb-3">
