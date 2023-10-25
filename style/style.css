@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+/* Body Styles */
 body {
     font-family: 'Gabarito', sans-serif;
     background: linear-gradient(90deg, #9933FF, #330066);
@@ -9,10 +10,12 @@ body {
     background-attachment: fixed;
 }
 
+/* Navigation Styles */
 .navbar {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+/* Spinner Styles */
 .loader {
     width: 215px;
     height: 215px;
@@ -47,6 +50,7 @@ body {
     }
 }
 
+/* Card Home Styles */
 .card-img-top {
     height: 180px;
     border-radius: 5px;
@@ -63,6 +67,7 @@ body {
     -webkit-line-clamp: 2;
 }
 
+/* Card Details Styles */
 .img-fluid {
     width: 100%;
 }
@@ -85,6 +90,7 @@ body {
     min-width: 90px;
 }
 
+/* Form Styles */
 label {
     width: 100%;
     color: white;

@@ -1,11 +1,13 @@
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
+// Show View Function
 const showView = (viewToShow) => {
     $$('.view').forEach((view) => view.classList.add('visually-hidden'));
     $(`#${viewToShow}`).classList.remove('visually-hidden');
 };
 
+// Fill out the Location Select
 const fillSelectLocation = (countries) => {
     $('#location-select').innerHTML += `<option value="location" selected disabled>location</option>`;
     for (let country of countries) {
@@ -14,6 +16,7 @@ const fillSelectLocation = (countries) => {
     }
 }
 
+// Fill out the Seniority Select
 const fillSelectSeniority = (seniorities) => {
     $('#seniority-select').innerHTML += `<option value="seniority" selected disabled>seniority</option>`;
     for (let seniority of seniorities) {
@@ -22,6 +25,7 @@ const fillSelectSeniority = (seniorities) => {
     }
 }
 
+// Fill out the Category Select
 const fillSelectCategory = (categories) => {
     $('#category-select').innerHTML += `<option value="category" selected disabled>category</option>`;
     for (let category of categories) {
@@ -30,6 +34,7 @@ const fillSelectCategory = (categories) => {
     }
 }
 
+// Clean Home
 const clearHome = () => {
     $('#container-cards').innerHTML = "";
     $('#location-select').innerHTML = "";
@@ -37,6 +42,7 @@ const clearHome = () => {
     $('#category-select').innerHTML = "";
 }
 
+// Job Card
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category, id} of data) {
     $('#container-cards').innerHTML += `<div class="card col-4 m-1" style="width: 16rem;">
@@ -54,6 +60,7 @@ const cardJob = (data) => {
     </div>` }
 }
 
+// New Job Information
 const dataNewJob = () => {
     let newJob = {
         name: `${$('#input-name').value}`,
@@ -75,6 +82,7 @@ const dataNewJob = () => {
     return newJob;
 };
 
+// Clear Creation Form
 const clearCreateForm = () => {
     $('#input-name').value = "";
     $('#input-url-image').value = "";
@@ -90,6 +98,7 @@ const clearCreateForm = () => {
     $('#input-language').value = "";
 }
 
+// Job Card Details
 const detailsCard = (infoCard) => {
     $('#view-details').innerHTML = '';
     $('#view-details').innerHTML += `
@@ -139,6 +148,7 @@ const detailsCard = (infoCard) => {
     `;
 };
 
+// Job Delete Alert
 const alertDeleteJob = (id) => {
     $('#section-alert-delete').innerHTML = "";
     $('#section-alert-delete').innerHTML += `<div class="alert alert-danger d-flex justify-content-around" role="alert">
@@ -156,6 +166,7 @@ const alertDeleteJob = (id) => {
     showView('section-alert-delete');
 }
 
+// Job Edition Form
 const formEditJob = async (id) => {
     showView('section-form-edit');
     $('#form-edit').innerHTML = '';
@@ -224,6 +235,7 @@ const formEditJob = async (id) => {
     }
 }
 
+// Autofill the Editing Form with Job Information
 const completeFormFields = (originalJobData) => {
     $('#edit-name').value = originalJobData.name;
     $('#edit-description').value = originalJobData.description;
@@ -239,6 +251,7 @@ const completeFormFields = (originalJobData) => {
     $('#edit-languages').value = originalJobData.languages;
 }
 
+// Edit Form Information
 const dataEditJob = () => {
     const data  = {
         name: $('#edit-name').value,
@@ -259,7 +272,9 @@ const dataEditJob = () => {
     return data;
 }
 
+// Initialize Events
 const initializeEvents = () => {
+    // Home Button
     $('#btn-home').addEventListener('click', () => {
         showView('spinner');
         setTimeout(() => {
@@ -268,26 +283,32 @@ const initializeEvents = () => {
         }, 2000);
         $('#search-bar').classList.remove('visually-hidden');
     });
+    // Create Job Button
     $('#btn-view-create').addEventListener('click', () => showView('section-form-create'));
+    // Submit Button
     $('#btn-create-job').addEventListener('click', () => {
         createNewJob();
     });
+    // Clear Button
     $('#clearFilters').addEventListener('click', () => {
         clearHome();
         getJobs();
     });
+    // Select Location Filter
     $('#location-select').addEventListener('change', () => {
         if ($('#location-select').value !== 'location') {
             $('#seniority-select').value = 'seniority';
             $('#category-select').value = 'category';
         }
     });
+    // Select Seniority Filter
     $('#seniority-select').addEventListener('change', () => {
         if ($('#seniority-select').value !== 'seniority') {
             $('#location-select').value = 'location';
             $('#category-select').value = 'category';
         }
     });
+    // Select Category Filter
     $('#category-select').addEventListener('change', () => {
         if ($('#category-select').value !== 'category') {
             $('#location-select').value = 'location';
