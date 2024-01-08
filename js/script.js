@@ -187,12 +187,31 @@ const formEditJob = async (id) => {
         </label>
         <h6 class="text-light">Tags</h6>
         <label>
-            Location:
-            <input type="text" name="location" id="edit-location" class="form-control mb-3 mt-2">
-            Seniority:
-            <input type="text" name="seniority" id="edit-seniority" class="form-control mb-3 mt-2">
-            Category:
-            <input type="text" name="category" id="edit-category" class="form-control mb-3 mt-2">
+            <select class="form-control mt-2" name="edit-location" id="edit-location">
+                <option value="location" selected disabled>Location</option>
+                <option value="remote">Remote</option>
+                <option value="argentina">Argentina</option>
+                <option value="brazil">Brazil</option>
+                <option value="colombia">Colombia</option>
+                <option value="chile">Chile</option>
+                <option value="usa">USA</option>
+                <option value="mexico">Mexico</option>
+            </select>
+            <select class="form-control mt-2" name="edit-seniority" id="edit-seniority">
+                <option value="seniority" selected disabled>Seniority</option>
+                <option value="trainee">Trainee</option>
+                <option value="junior">Junior</option>
+                <option value="semisenior">SemiSenior</option>
+                <option value="senior">Senior</option>
+            </select>
+            <select class="form-control mt-2" name="edit-category" id="edit-category">
+                <option value="category" selected disabled>Category</option>
+                <option value="engineer">Engineer</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="fullstack">FullStack</option>
+                <option value="designer">Designer</option>
+            </select>
         </label>
         <h6 class="text-light">Benefits</h6>
         <label class="form-label mb-3">
