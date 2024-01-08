@@ -43,7 +43,7 @@ const dataNewJob = () => {
         category: `${$('#select-seniority').value}`,
         seniority: `${$('#select-category').value}`,
         benefits: {
-            vacation: `${$('#input-vacations').value}`,
+            vacation: `${$('#number-vacation').value + $('#select-vacation')}`,
             health_ensurance: `${$('#input-health-ensurance').value}`,
             internet_paid: `${$('#select-internet-paid').value}`,
         },
@@ -63,7 +63,8 @@ const clearCreateForm = () => {
     $('#select-location').value = "";
     $('#select-category').value = "";
     $('#select-seniority').value = "";
-    $('#input-vacations').value = "";
+    $('#number-vacation').value = "";
+    $('#select-vacation').value = "";
     $('#input-health-ensurance').value = "";
     $('#select-internet-paid').value = "internet-paid";
     $('#input-salary').value = "";
