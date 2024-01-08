@@ -53,9 +53,9 @@ const clearCreateForm = () => {
     $('#input-name').value = "";
     $('#input-url-image').value = "";
     $('#textarea-description').value = "";
-    $('#select-location').value = "";
-    $('#select-category').value = "";
-    $('#select-seniority').value = "";
+    $('#select-location').value = "location";
+    $('#select-category').value = "category";
+    $('#select-seniority').value = "seniority";
     $('#number-vacation').value = "";
     $('#select-vacation').value = "";
     $('#input-health-ensurance').value = "";
