@@ -40,8 +40,8 @@ const dataNewJob = () => {
         image: `${$('#input-url-image').value}`,
         description: `${$('#textarea-description').value}`,
         location: `${$('#select-location').value}`,
-        category: `${$('#select-seniority').value}`,
-        seniority: `${$('#select-category').value}`,
+        seniority: `${$('#select-seniority').value}`,
+        category: `${$('#select-category').value}`,
         benefits: {
             number_vacation: `${$('#number-vacation').value}`,
             select_vacation: `${$('#select-vacation').value}`,
@@ -193,13 +193,13 @@ const formEditJob = async (id) => {
             Vacations:
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <input type="number"  class="form-control mt-2" id="edit-number-vacation" placeholder="Number">
+                    <input type="number" class="form-control mt-2" id="edit-number-vacation" placeholder="Number">
                 </div>
                 <div class="col-auto">
                     <select id="edit-select-vacation" class="form-control mt-2">
                         <option value="duracion" selected disabled>Days/Weeks/Months</option>
                         <option value="days">Days</option>
-                        <option value="Weeks">Weeks</option>
+                        <option value="weeks">Weeks</option>
                         <option value="months">Months</option>
                     </select>
                 </div>
@@ -249,7 +249,7 @@ const completeFormFields = (originalJobData) => {
     $('#edit-location').value = originalJobData.location;
     $('#edit-seniority').value = originalJobData.seniority;
     $('#edit-category').value = originalJobData.category;
-    $('#edit-number-vacations').value = originalJobData.benefits.number_vacation;
+    $('#edit-number-vacation').value = originalJobData.benefits.number_vacation;
     $('#edit-select-vacation').value = originalJobData.benefits.select_vacation;
     $('#edit-health-ensurance').value = originalJobData.benefits.health_ensurance;
     $('#select-edit-internet-paid').value = originalJobData.benefits.internet_paid;
@@ -268,8 +268,8 @@ const dataEditJob = () => {
         category: $('#edit-category').value,
         seniority: $('#edit-seniority').value,
         benefits: {
-            numberVacation: $('#edit-number-vacations').value,
-            selectVacation: $('#edit-select-vacations').value,
+            numberVacation: $('#edit-number-vacation').value,
+            selectVacation: $('#edit-select-vacation').value,
             health_ensurance: $('#edit-health-ensurance').value,
             internet_paid: $('#select-edit-internet-paid').value,
         },
