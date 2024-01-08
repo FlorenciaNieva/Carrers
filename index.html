@@ -122,7 +122,19 @@
                 <label class="form-label my-3">
                     Benefits
                     <label class="col-form-label mt-1">Vacations</label>
-                    <input type="text"  class="form-control mt-2" id="input-vacations" placeholder="Vacations">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <input type="number"  class="form-control mt-2" id="number-vacation" placeholder="Number">
+                        </div>
+                        <div class="col-auto">
+                            <select id="select-vacation" class="form-control mt-2">
+                                <option value="duracion" selected disabled>Days/Weeks/Months</option>
+                                <option value="days">Days</option>
+                                <option value="Weeks">Weeks</option>
+                                <option value="months">Months</option>
+                            </select>
+                        </div>
+                    </div> 
                     <label class="col-form-label mt-1">Health Ensurance</label>
                     <input type="text"  class="form-control mt-2" id="input-health-ensurance" placeholder="Health Ensurance">
                     <label class="col-form-label mt-1">Internet Paid</label>
