@@ -18,39 +18,6 @@ const getJobs = async () => {
     }
 };
 
-// Gets the Countries of the cards and saves them in a variable
-const getCountries = (data) => {
-    const countries = [];
-    data.forEach(element => {
-        if (!countries.includes(element.location.toLowerCase())) {
-            countries.push(element.location.toLowerCase());
-        }
-    });
-    fillSelectLocation(countries);
-}
-
-// Gets the Seniorities of the cards and saves them in a variable
-const getSeniorities = (data) => {
-    const seniorities = [];
-    data.forEach(element => {
-        if (!seniorities.includes(element.seniority.toLowerCase())) {
-            seniorities.push(element.seniority.toLowerCase());
-        }
-    });
-    fillSelectSeniority(seniorities);
-}
-
-// Gets the Categories of the cards and saves them in a variable
-const getCategories = (data) => {
-    const categories = [];
-    data.forEach(element => {
-        if (!categories.includes(element.category.toLowerCase())) {
-            categories.push(element.category.toLowerCase());
-        }
-    });
-    fillSelectCategory(categories);
-}
-
 // Look for Cards that Pass the Location Filter and Displays them
 const getFilterLocation = () => {
     const location = $("#location-select").value;
@@ -142,7 +109,7 @@ const createNewJob = async () => {
             body: JSON.stringify(newJob),
         });
         if (response.ok) {
-            clearHome();
+            $('#container-cards').innerHTML = "";
             getJobs();
         } 
     } catch (error) {
@@ -179,7 +146,7 @@ const deleteJob = async (id) => {
             {
                 method: 'DELETE',
             });
-        clearHome();
+        $('#container-cards').innerHTML = "";
         getJobs();
     } catch (error) {
         console.error(error);
@@ -208,7 +175,7 @@ const editJob = async (id) => {
                 },
                 body: JSON.stringify(dataEditJob()),
             });
-        clearHome();
+        $('#container-cards').innerHTML = "";
         getJobs();
     } catch (error) {
         console.error(error);

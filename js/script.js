@@ -7,41 +7,6 @@ const showView = (viewToShow) => {
     $(`#${viewToShow}`).classList.remove('visually-hidden');
 };
 
-// Fill out the Location Select
-const fillSelectLocation = (countries) => {
-    $('#location-select').innerHTML += `<option value="location" selected disabled>location</option>`;
-    for (let country of countries) {
-        const option = `<option value="${country}">${country}</option>`;
-        $('#location-select').innerHTML += `${option}`;
-    }
-}
-
-// Fill out the Seniority Select
-const fillSelectSeniority = (seniorities) => {
-    $('#seniority-select').innerHTML += `<option value="seniority" selected disabled>seniority</option>`;
-    for (let seniority of seniorities) {
-        const option = `<option value="${seniority}">${seniority}</option>`;
-        $('#seniority-select').innerHTML += `${option}`;
-    }
-}
-
-// Fill out the Category Select
-const fillSelectCategory = (categories) => {
-    $('#category-select').innerHTML += `<option value="category" selected disabled>category</option>`;
-    for (let category of categories) {
-        const option = `<option value="${category}">${category}</option>`;
-        $('#category-select').innerHTML += `${option}`;
-    }
-}
-
-// Clean Home
-const clearHome = () => {
-    $('#container-cards').innerHTML = "";
-    $('#location-select').innerHTML = "";
-    $('#seniority-select').innerHTML = "";
-    $('#category-select').innerHTML = "";
-}
-
 // Job Card
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category, id} of data) {
@@ -66,11 +31,12 @@ const dataNewJob = () => {
         name: `${$('#input-name').value}`,
         image: `${$('#input-url-image').value}`,
         description: `${$('#textarea-description').value}`,
-        location: `${$('#input-location').value}`,
-        category: `${$('#input-category').value}`,
-        seniority: `${$('#input-seniority').value}`,
+        location: `${$('#select-location').value}`,
+        seniority: `${$('#select-seniority').value}`,
+        category: `${$('#select-category').value}`,
         benefits: {
-            vacation: `${$('#input-vacations').value}`,
+            number_vacation: `${$('#number-vacation').value}`,
+            select_vacation: `${$('#select-vacation').value}`,
             health_ensurance: `${$('#input-health-ensurance').value}`,
             internet_paid: `${$('#select-internet-paid').value}`,
         },
@@ -87,10 +53,11 @@ const clearCreateForm = () => {
     $('#input-name').value = "";
     $('#input-url-image').value = "";
     $('#textarea-description').value = "";
-    $('#input-location').value = "";
-    $('#input-category').value = "";
-    $('#input-seniority').value = "";
-    $('#input-vacations').value = "";
+    $('#select-location').value = "";
+    $('#select-category').value = "";
+    $('#select-seniority').value = "";
+    $('#number-vacation').value = "";
+    $('#select-vacation').value = "";
     $('#input-health-ensurance').value = "";
     $('#select-internet-paid').value = "internet-paid";
     $('#input-salary').value = "";
@@ -116,7 +83,7 @@ const detailsCard = (infoCard) => {
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-evenly">
                         <div class="text-center">
-                            <p class="benefits m-0">${infoCard.benefits.vacation}</p>
+                            <p class="benefits m-0">${infoCard.benefits.number_vacation} ${infoCard.benefits.select_vacation}</p>
                             <label class="text-secondary">Vacation</label>
                         </div>
                         <div class="text-center">
@@ -187,19 +154,50 @@ const formEditJob = async (id) => {
         </label>
         <h6 class="text-light">Tags</h6>
         <label>
-            Location:
-            <input type="text" name="location" id="edit-location" class="form-control mb-3 mt-2">
-            Seniority:
-            <input type="text" name="seniority" id="edit-seniority" class="form-control mb-3 mt-2">
-            Category:
-            <input type="text" name="category" id="edit-category" class="form-control mb-3 mt-2">
+            <select class="form-control mt-2" name="edit-location" id="edit-location">
+                <option value="location" selected disabled>Location</option>
+                <option value="remote">Remote</option>
+                <option value="argentina">Argentina</option>
+                <option value="brazil">Brazil</option>
+                <option value="colombia">Colombia</option>
+                <option value="chile">Chile</option>
+                <option value="usa">USA</option>
+                <option value="mexico">Mexico</option>
+            </select>
+            <select class="form-control mt-2" name="edit-seniority" id="edit-seniority">
+                <option value="seniority" selected disabled>Seniority</option>
+                <option value="trainee">Trainee</option>
+                <option value="junior">Junior</option>
+                <option value="semisenior">SemiSenior</option>
+                <option value="senior">Senior</option>
+            </select>
+            <select class="form-control mt-2" name="edit-category" id="edit-category">
+                <option value="category" selected disabled>Category</option>
+                <option value="engineer">Engineer</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="fullstack">FullStack</option>
+                <option value="designer">Designer</option>
+            </select>
         </label>
-        <h6 class="text-light">Benefits</h6>
+        <h6 class="text-light my-3">Benefits</h6>
         <label class="form-label mb-3">
             Vacations:
-            <input type="text"  class="form-control mt-2" id="edit-vacations">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <input type="number" class="form-control mt-2" id="edit-number-vacation" placeholder="Number">
+                </div>
+                <div class="col-auto">
+                    <select id="edit-select-vacation" class="form-control mt-2">
+                        <option value="duracion" selected disabled>Days/Weeks/Months</option>
+                        <option value="days">Days</option>
+                        <option value="weeks">Weeks</option>
+                        <option value="months">Months</option>
+                    </select>
+                </div>
+            </div> 
             Health ensurance:
-            <input type="text"  class="form-control mt-2" id="edit-health-ensurance">
+            <input type="text" class="form-control mt-2" id="edit-health-ensurance">
             Internet paid:
             <select class="form-control mt-2" name="select-edit-internet-paid" id="select-edit-internet-paid">
                 <option value="internet-paid" disabled>Internet Paid</option>
@@ -243,7 +241,8 @@ const completeFormFields = (originalJobData) => {
     $('#edit-location').value = originalJobData.location;
     $('#edit-seniority').value = originalJobData.seniority;
     $('#edit-category').value = originalJobData.category;
-    $('#edit-vacations').value = originalJobData.benefits.vacation;
+    $('#edit-number-vacation').value = originalJobData.benefits.number_vacation;
+    $('#edit-select-vacation').value = originalJobData.benefits.select_vacation;
     $('#edit-health-ensurance').value = originalJobData.benefits.health_ensurance;
     $('#select-edit-internet-paid').value = originalJobData.benefits.internet_paid;
     $('#edit-salary').value = originalJobData.salary;
@@ -261,7 +260,8 @@ const dataEditJob = () => {
         category: $('#edit-category').value,
         seniority: $('#edit-seniority').value,
         benefits: {
-            vacation: $('#edit-vacations').value,
+            numberVacation: $('#edit-number-vacation').value,
+            selectVacation: $('#edit-select-vacation').value,
             health_ensurance: $('#edit-health-ensurance').value,
             internet_paid: $('#select-edit-internet-paid').value,
         },
