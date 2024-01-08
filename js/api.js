@@ -109,7 +109,7 @@ const createNewJob = async () => {
             body: JSON.stringify(newJob),
         });
         if (response.ok) {
-            clearHome();
+            $('#container-cards').innerHTML = "";
             getJobs();
         } 
     } catch (error) {
@@ -146,7 +146,7 @@ const deleteJob = async (id) => {
             {
                 method: 'DELETE',
             });
-        clearHome();
+        $('#container-cards').innerHTML = "";
         getJobs();
     } catch (error) {
         console.error(error);
@@ -175,7 +175,7 @@ const editJob = async (id) => {
                 },
                 body: JSON.stringify(dataEditJob()),
             });
-        clearHome();
+        $('#container-cards').innerHTML = "";
         getJobs();
     } catch (error) {
         console.error(error);
