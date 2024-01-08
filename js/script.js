@@ -7,33 +7,6 @@ const showView = (viewToShow) => {
     $(`#${viewToShow}`).classList.remove('visually-hidden');
 };
 
-// Fill out the Location Select
-const fillSelectLocation = (countries) => {
-    $('#location-select').innerHTML += `<option value="location" selected disabled>location</option>`;
-    for (let country of countries) {
-        const option = `<option value="${country}">${country}</option>`;
-        $('#location-select').innerHTML += `${option}`;
-    }
-}
-
-// Fill out the Seniority Select
-const fillSelectSeniority = (seniorities) => {
-    $('#seniority-select').innerHTML += `<option value="seniority" selected disabled>seniority</option>`;
-    for (let seniority of seniorities) {
-        const option = `<option value="${seniority}">${seniority}</option>`;
-        $('#seniority-select').innerHTML += `${option}`;
-    }
-}
-
-// Fill out the Category Select
-const fillSelectCategory = (categories) => {
-    $('#category-select').innerHTML += `<option value="category" selected disabled>category</option>`;
-    for (let category of categories) {
-        const option = `<option value="${category}">${category}</option>`;
-        $('#category-select').innerHTML += `${option}`;
-    }
-}
-
 // Clean Home
 const clearHome = () => {
     $('#container-cards').innerHTML = "";
