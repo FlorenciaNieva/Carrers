@@ -57,7 +57,7 @@ const clearCreateForm = () => {
     $('#select-category').value = "category";
     $('#select-seniority').value = "seniority";
     $('#number-vacation').value = "";
-    $('#select-vacation').value = "";
+    $('#select-vacation').value = "duracion";
     $('#input-health-ensurance').value = "";
     $('#select-internet-paid').value = "internet-paid";
     $('#input-salary').value = "";
