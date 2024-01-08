@@ -7,14 +7,6 @@ const showView = (viewToShow) => {
     $(`#${viewToShow}`).classList.remove('visually-hidden');
 };
 
-// Clean Home
-const clearHome = () => {
-    $('#container-cards').innerHTML = "";
-    $('#location-select').innerHTML = "";
-    $('#seniority-select').innerHTML = "";
-    $('#category-select').innerHTML = "";
-}
-
 // Job Card
 const cardJob = (data) => {
     for (let {name, image, description, location, seniority, category, id} of data) {
