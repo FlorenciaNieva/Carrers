@@ -272,6 +272,14 @@ const dataEditJob = () => {
     return data;
 }
 
+// Clear Home
+const clearHome = () => {
+    $('#container-cards').innerHTML = "";
+    $('#location-select').value = 'location';
+    $('#seniority-select').value = 'seniority';
+    $('#category-select').value = 'category';
+}
+
 // Initialize Events
 const initializeEvents = () => {
     // Home Button
