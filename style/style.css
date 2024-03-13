@@ -110,16 +110,7 @@ nav a {
 }
 
 /* Form Styles */
-.formDesing {
-    position: relative;
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(100px);
-    border-radius: 20px;
-    padding: 20px;
-}
-
 label {
     width: 100%;
-    color: white;
+    color: black;
 }
