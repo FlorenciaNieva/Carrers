@@ -9,11 +9,11 @@ body {
     background-attachment: fixed;
 }
 
+/* Navigation Styles */
 nav a {
     color: #fe5b27 !important;
 }
 
-/* Navigation Styles */
 .navbar {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -75,6 +75,22 @@ nav a {
     border-radius: 5px;
 }
 
+.btn-orange {
+    background-color: #fe5b27 !important;
+    color: white !important;
+}
+
+.btn-outline-orange {
+    border-color: #fe5b27;
+    color: #fe5b27;
+}
+
+.btn-outline-orange:hover {
+    color: white;
+    background-color: #fe5b27;
+    border-color: #fe5b27;
+}
+
 .btn-details {
     border-radius: 50px;
 }
@@ -84,6 +100,10 @@ nav a {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+}
+
+.badge {
+    background-color: #fe5b27 !important;
 }
 
 /* Card Details Styles */
