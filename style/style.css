@@ -9,6 +9,10 @@ body {
     background-attachment: fixed;
 }
 
+nav a {
+    color: #fe5b27 !important;
+}
+
 /* Navigation Styles */
 .navbar {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
