@@ -110,7 +110,17 @@ nav a {
 }
 
 /* Form Styles */
+
 label {
     width: 100%;
     color: black;
+}
+
+@media (width <= 767px) {
+    .search-mobile {
+        flex-direction: column;
+    }
+    .search-mobile select, .search-mobile button {
+        margin-top: 10px;
+    }
 }
