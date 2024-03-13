@@ -15,7 +15,7 @@ const cardJob = (data) => {
         <div class="card-body">
             <h5 class="card-title text-center">${name}</h5>
             <p class="card-text card-text-short">${description}</p>
-            <div class="d-grid gap-2 d-md-flex justify-content-center mb-2">
+            <div class="d-grid gap-2 d-flex justify-content-center aling-items-center mb-2">
                 <h6><span class="badge rounded-pill bg-primary">${location}</span></h6>
                 <h6><span class="badge rounded-pill bg-primary">${seniority}</span></h6>
                 <h6><span class="badge rounded-pill bg-primary">${category}</span></h6>
