@@ -10,9 +10,6 @@ const getJobs = async () => {
             $('#banner').classList.remove('visually-hidden');
             $('#search-bar').classList.remove('visually-hidden')
         }, 2000);
-        getCountries(data);
-        getSeniorities(data);
-        getCategories(data);
     } catch (error) {
         console.error(error);
     }
