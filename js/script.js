@@ -285,6 +285,8 @@ const initializeEvents = () => {
     // Home Button
     $('#btn-home').addEventListener('click', () => {
         showView('spinner');
+        $('#banner').classList.remove('visually-hidden');
+        $('#search-bar').classList.remove('visually-hidden');
         setTimeout(() => {
             showView('container-cards');
             $('#banner').classList.remove('visually-hidden');
