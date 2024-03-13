@@ -20,7 +20,7 @@ const cardJob = (data) => {
                 <h6><span class="badge rounded-pill bg-primary">${seniority}</span></h6>
                 <h6><span class="badge rounded-pill bg-primary">${category}</span></h6>
             </div>
-            <a href="#" onclick="viewDetails('${id}')" id="${id}" class="btn-details btn btn-primary d-flex justify-content-center">See details</a>
+            <a href="#" onclick="viewDetails('${id}')" id="${id}" class="btn btn-details btn-orange d-flex justify-content-center">See details</a>
         </div>
     </div>` }
 }
@@ -79,7 +79,7 @@ const detailsCard = (infoCard) => {
                     <h5 class="card-title text-center">${infoCard.name}</h5>
                     <p class="card-text text-secondary-emphasis  text-center mt-2">${infoCard.description}</p>
                     <div class="text-center mt-2">
-                        <p class="btn btn-outline-primary">${infoCard.languages.join(', ')}</p>
+                        <p class="btn btn-outline-orange">${infoCard.languages.join(', ')}</p>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-evenly">
                         <div class="text-center">
@@ -222,7 +222,7 @@ const formEditJob = async (id) => {
             <input type="text" class="form-control mt-2" id="edit-languages">
         </label>
         <button type="button" onclick="viewDetails('${id}')" class="btn btn-secondary">Cancel</button>
-        <button type="button" onclick="editJob('${id}')" class="btn btn-primary">Edit</button>
+        <button type="button" onclick="editJob('${id}')" class="btn btn-orange">Edit</button>
     </form>
     `;
     try {
