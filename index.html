@@ -13,7 +13,7 @@
 <body>
     <header>
         <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg" data-bs-theme="light">
             <div class="container">
                 <a class="navbar-brand" href="#">Carrers</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -37,21 +37,19 @@
     <main class="container">
         <!-- Banner -->
         <section id="banner" class="view">
-            <div>
-                <div class="col-12">
-                    <div class="banner__images">
-                        <img src="/img/banner.jpg" class="img-fluid img-banner" alt="image of a work meeting">
-                        <div class="banner__text">
-                            <h1 class="m-4">WE ARE LOOKING FOR THE BEST CREATIVE TALENT.</h1>
-                            <h2 class="m-4"> HERE. NOW.</h2>
-                        </div>
+            <div class="col-12">
+                <div class="banner__images">
+                    <img src="./img/banner.jpg" class="img-fluid img-banner" alt="image of a work meeting">
+                    <div class="banner__text">
+                        <h1 class="m-4">WE ARE LOOKING FOR THE BEST CREATIVE TALENT.</h1>
+                        <h2 class="m-4"> HERE. NOW.</h2>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Search Bar -->
         <section id="search-bar" class="mt-3 view">
-            <form class="d-flex">
+            <form class="d-flex search-mobile">
                 <select class="form-control me-5" name="location" id="location-select">
                     <option value="location" selected disabled>Location</option>
                     <option value="remote">Remote</option>
@@ -77,21 +75,21 @@
                     <option value="fullstack">FullStack</option>
                     <option value="designer">Designer</option>
                 </select>
-                <button id="searchFilters" onclick="getFilters()" class="btn btn-primary me-2" type="button">
+                <button id="searchFilters" onclick="getFilters()" class="btn btn-orange me-2" type="button">
                     Search
                 </button>
-                <button id="clearFilters" class="btn btn-outline-primary" type="button">
+                <button id="clearFilters" class="btn btn-outline-orange" type="button">
                     Clear
                 </button>
             </form>
         </section>
         <!-- Spinner -->
-        <span id="spinner" class="loader view visually-hidden mt-5"></span>
+        <div id="spinner" class="vh-100 loader view visually-hidden mt-5"></div>
         <!-- Cards Container -->
         <section id="container-cards" class="row justify-content-center mt-4 view"></section>
         <!-- Job Create Form -->
-        <section id="section-form-create" class="formDesing mt-4 container view visually-hidden">
-            <h2 class="mb-4 text-light">Create Job</h2>
+        <section id="section-form-create" class="mt-4 container view visually-hidden">
+            <h2 class="mb-4">Create Job</h2>
             <form class="container mb-3">
                 <label class="form-label mb-3">
                     Job Title
@@ -174,11 +172,11 @@
                     Lenguajes
                     <input type="text"  class="form-control mt-2" id="input-language" placeholder="Languages">
                 </label>
-                <button type="button" class="btn btn-primary" id="btn-create-job">Submit</button>
+                <button type="button" class="btn btn-orange" id="btn-create-job">Submit</button>
             </form>
         </section>
         <!-- Cards with Details -->
-        <section id="view-details" class="mt-4 view"></section>
+        <section id="view-details" class="container-details d-flex justify-content-center align-items-center mt-4 view"></section>
         <!-- Job Edit Form -->
         <section class="formDesing mt-4 view" id="section-form-edit">
             <div class="container" id="form-edit"></div>
@@ -186,6 +184,13 @@
         <!-- Job Delete Alert -->
         <section id="section-alert-delete" class="mt-3 view"></section>
     </main>
+    <footer>
+        <div class="container-fluid">
+            <h5>Built and Designed for
+                <a href="https://github.com/FlorenciaNieva" target="_blank">Florencia Nieva</a>
+            </h5>
+        </div>
+    </footer>
     <!-- Links JS -->
     <script src="js/script.js"></script>
     <script src="js/api.js"></script>

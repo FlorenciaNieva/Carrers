@@ -20,7 +20,7 @@ const cardJob = (data) => {
                 <h6><span class="badge rounded-pill bg-primary">${seniority}</span></h6>
                 <h6><span class="badge rounded-pill bg-primary">${category}</span></h6>
             </div>
-            <a href="#" onclick="viewDetails('${id}')" id="${id}" class="btn-details btn btn-primary d-flex justify-content-center">See details</a>
+            <a href="#" onclick="viewDetails('${id}')" id="${id}" class="btn btn-details btn-orange d-flex justify-content-center">See details</a>
         </div>
     </div>` }
 }
@@ -79,7 +79,7 @@ const detailsCard = (infoCard) => {
                     <h5 class="card-title text-center">${infoCard.name}</h5>
                     <p class="card-text text-secondary-emphasis  text-center mt-2">${infoCard.description}</p>
                     <div class="text-center mt-2">
-                        <p class="btn btn-outline-primary">${infoCard.languages.join(', ')}</p>
+                        <p class="btn btn-outline-orange">${infoCard.languages.join(', ')}</p>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-evenly">
                         <div class="text-center">
@@ -118,16 +118,19 @@ const detailsCard = (infoCard) => {
 // Job Delete Alert
 const alertDeleteJob = (id) => {
     $('#section-alert-delete').innerHTML = "";
-    $('#section-alert-delete').innerHTML += `<div class="alert alert-danger d-flex justify-content-around" role="alert">
-        <div class="d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg"  class="flex-shrink-0 me-2" height="1em" viewBox="0 0 448 512" role="img" aria-label="delete:"><path d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg>
-            <div>
-                Are you sure to delete this job?
+    $('#section-alert-delete').innerHTML += `
+    <div class="vh-100">
+        <div class="alert alert-danger d-flex justify-content-around" role="alert">
+            <div class="d-flex align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg"  class="flex-shrink-0 me-2" height="1em" viewBox="0 0 448 512" role="img" aria-label="delete:"><path d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg>
+                <div>
+                    Are you sure to delete this job?
+                </div>
             </div>
-        </div>
-        <div>
-            <button type="button" onclick="viewDetails('${id}')" class="btn btn-outline-secondary">Cancel</button>
-            <button type="button" onclick="deleteJob('${id}')" class="btn btn-danger">Delete job</button>
+            <div>
+                <button type="button" onclick="viewDetails('${id}')" class="btn btn-outline-secondary">Cancel</button>
+                <button type="button" onclick="deleteJob('${id}')" class="btn btn-danger">Delete job</button>
+            </div>
         </div>
     </div>`
     showView('section-alert-delete');
@@ -138,21 +141,21 @@ const formEditJob = async (id) => {
     showView('section-form-edit');
     $('#form-edit').innerHTML = '';
     $('#form-edit').innerHTML += `
-    <h2 class="mb-4 text-light">Edit Job</h2>
+    <h2 class="mb-4">Edit Job</h2>
     <form class="container mb-3">
-        <h6 class="text-light">Job Title</h6>
+        <h6>Job Title</h6>
         <label class="form-label mb-3">
             <input type="text" class="form-control mt-2" id="edit-name">
         </label>
-        <h6 class="text-light">Image</h6>
+        <h6>Image</h6>
         <label class="form-label mb-3">
             <input type="text" class="form-control mt-2" id="edit-image">
         </label>
-        <h6 class="text-light">Description</h6>
+        <h6>Description</h6>
         <label class="form-label mb-3">
             <textarea class="form-control mt-2" id="edit-description" rows="3"></textarea>
         </label>
-        <h6 class="text-light">Tags</h6>
+        <h6>Tags</h6>
         <label>
             <select class="form-control mt-2" name="edit-location" id="edit-location">
                 <option value="location" selected disabled>Location</option>
@@ -180,7 +183,7 @@ const formEditJob = async (id) => {
                 <option value="designer">Designer</option>
             </select>
         </label>
-        <h6 class="text-light my-3">Benefits</h6>
+        <h6 class="my-3">Benefits</h6>
         <label class="form-label mb-3">
             Vacations:
             <div class="row g-3 align-items-center">
@@ -205,11 +208,11 @@ const formEditJob = async (id) => {
                 <option value="false">False</option>
             </select>
         </label>
-        <h6 class="text-light">Salary</h6>
+        <h6>Salary</h6>
         <label class="form-label mb-3">
             <input type="number"  class="form-control mt-2" id="edit-salary">
         </label>
-        <h6 class="text-light">Long Term</h6>
+        <h6>Long Term</h6>
         <label class="form-label mb-3">
             <select class="form-control mt-2" name="select-edit-long-term" id="select-edit-long-term">
                 <option value="select" disabled>Select True o False</option>
@@ -217,12 +220,12 @@ const formEditJob = async (id) => {
                 <option value="false">False</option>
             </select>
         </label>
-        <h6 class="text-light">Lenguajes</h6>
+        <h6>Lenguajes</h6>
         <label class="form-label mb-3">
             <input type="text" class="form-control mt-2" id="edit-languages">
         </label>
         <button type="button" onclick="viewDetails('${id}')" class="btn btn-secondary">Cancel</button>
-        <button type="button" onclick="editJob('${id}')" class="btn btn-primary">Edit</button>
+        <button type="button" onclick="editJob('${id}')" class="btn btn-orange">Edit</button>
     </form>
     `;
     try {
@@ -285,6 +288,8 @@ const initializeEvents = () => {
     // Home Button
     $('#btn-home').addEventListener('click', () => {
         showView('spinner');
+        $('#banner').classList.remove('visually-hidden');
+        $('#search-bar').classList.remove('visually-hidden');
         setTimeout(() => {
             showView('container-cards');
             $('#banner').classList.remove('visually-hidden');

@@ -1,18 +1,17 @@
 // Get the Information from the Api
 const getJobs = async () => {
     try {
-        showView('spinner');
         const response = await fetch("https://6524100aea560a22a4e957ae.mockapi.io/api/jobs");
         const data = await response.json();
+        showView('spinner');
+        $('#banner').classList.remove('visually-hidden');
+        $('#search-bar').classList.remove('visually-hidden');
         setTimeout(() => {
             cardJob(data);
             showView('container-cards');
             $('#banner').classList.remove('visually-hidden');
-            $('#search-bar').classList.remove('visually-hidden')
+            $('#search-bar').classList.remove('visually-hidden');
         }, 2000);
-        getCountries(data);
-        getSeniorities(data);
-        getCategories(data);
     } catch (error) {
         console.error(error);
     }
