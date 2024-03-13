@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    color: white;
 }
 
 /* Body Styles */
@@ -31,7 +32,6 @@ nav a {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
 }
 
 /* Spinner Styles */
@@ -129,13 +129,29 @@ nav a {
     min-width: 90px;
 }
 
-/* Form Styles */
-
+/* Form */
 label {
     width: 100%;
     color: black;
 }
 
+/* Footer */
+footer {
+    background-color: #fe5b27;
+    margin-top: 25px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Medias Queries */
 @media (width <= 767px) {
     .search-mobile {
         flex-direction: column;
