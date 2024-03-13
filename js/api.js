@@ -7,9 +7,9 @@ const getJobs = async () => {
         setTimeout(() => {
             cardJob(data);
             showView('container-cards');
+            $('#banner').classList.remove('visually-hidden');
             $('#search-bar').classList.remove('visually-hidden')
         }, 2000);
-        $('#search-bar').classList.remove('visually-hidden')
         getCountries(data);
         getSeniorities(data);
         getCategories(data);

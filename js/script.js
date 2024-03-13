@@ -287,9 +287,9 @@ const initializeEvents = () => {
         showView('spinner');
         setTimeout(() => {
             showView('container-cards');
+            $('#banner').classList.remove('visually-hidden');
             $('#search-bar').classList.remove('visually-hidden');
         }, 2000);
-        $('#search-bar').classList.remove('visually-hidden');
     });
     // Create Job Button
     $('#btn-view-create').addEventListener('click', () => showView('section-form-create'));
