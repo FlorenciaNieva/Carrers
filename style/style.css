@@ -15,6 +15,22 @@ body {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+/* Banner */
+.img-banner {
+    max-height: 70vh;
+    min-height: 60vh;
+    filter: brightness(40%);
+}
+
+.banner__text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
 /* Spinner Styles */
 .loader {
     width: 215px;
