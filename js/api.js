@@ -120,12 +120,6 @@ const createNewJob = async () => {
     } catch (error) {
         console.error("Error de red:", error);
     }
-    showView('spinner');
-    setTimeout(() => {
-        showView('container-cards');
-        $('#search-bar').classList.remove('visually-hidden');
-    }, 2000);
-    $('#search-bar').classList.remove('visually-hidden');
 }
 
 // Get the Information of the Selected Card and Display it
