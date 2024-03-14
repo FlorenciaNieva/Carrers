@@ -34,8 +34,10 @@ const getFilterLocation = () => {
                     $("#container-cards").innerHTML = "";
                     cardJob(data);
                     showView("container-cards");
+                    $('#banner').classList.remove('visually-hidden');
                     $("#search-bar").classList.remove("visually-hidden");
                 }, 2000);
+                $('#banner').classList.remove('visually-hidden');
                 $("#search-bar").classList.remove("visually-hidden");
             });
     }
@@ -58,8 +60,10 @@ const getFilterSeniority = () => {
                     $("#container-cards").innerHTML = "";
                     cardJob(data);
                     showView("container-cards");
+                    $('#banner').classList.remove('visually-hidden');
                     $("#search-bar").classList.remove("visually-hidden");
                 }, 2000);
+                $('#banner').classList.remove('visually-hidden');
                 $("#search-bar").classList.remove("visually-hidden");
             });
     }
@@ -82,8 +86,10 @@ const getFilterCategory = () => {
                     $("#container-cards").innerHTML = "";
                     cardJob(data);
                     showView("container-cards");
+                    $('#banner').classList.remove('visually-hidden');
                     $("#search-bar").classList.remove("visually-hidden");
                 }, 2000);
+                $('#banner').classList.remove('visually-hidden');
                 $("#search-bar").classList.remove("visually-hidden");
             });
     } 
